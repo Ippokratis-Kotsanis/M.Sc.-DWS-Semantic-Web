@@ -1,0 +1,42 @@
+<?xml version="1.1" encoding="UTF-8"?>
+<!DOCTYPE COMPANY SYSTEM "C:\Users\user\Documents\Altova\XMLSpy2023\Examples\131_ΕΡΓΑΣΙΑ1.dtd">
+<COMPANY>
+	<DEPARTMENT id="ID1">
+		<D_NAME>GREECE DEPARTMENT</D_NAME>
+		<PROJECT NAME="Admincontrol" id_PROJ="ID456557" EMPLOYEES_NO="120">
+			<TEAM NAME="Admincontrol team" id_TEAM="ID3">
+				<FULLSTACK>
+					<NAME_FS>Tornado team</NAME_FS>
+					<ID_TEAMFS>ID101</ID_TEAMFS>
+				</FULLSTACK>
+				<FRONTEND>
+					<NAME_FE>Angular team</NAME_FE>
+					<ID_TEAMFE>ID201</ID_TEAMFE>
+				</FRONTEND>
+				<BACKEND>
+					<NAME_BE>Platform team</NAME_BE>
+					<ID_TEAMBE>ID301</ID_TEAMBE>
+				</BACKEND>
+			</TEAM>
+			<EMPLOYEE>
+				<DEVELOPER id="IDeveloper456557" SALARY="1500E" LEVEL_TYPE="SENIOR" NUMBER_D="86">Project Admincontrol
+				 has 86 senior developers higly skilled in web development. Their main responsibilities
+				 are feature implementation and bug fixing.</DEVELOPER>
+				<QA id="IDQA456557" SALARY="1200E" LEVEL_TYPE="MID" NUMBER_QA="31">Project Admincontrol has 31 QA senior tester, who run tests in selenium programm.</QA>
+				<TEAM_LEADER id="IDTeamLeader456557" SALARY="2000E" LEVEL_TYPE="SENIOR" NUMBER_TL="3">Team leaders in Admincontrol
+				 are responsible to organize their teams. There are 3 team leaders in Admincontrol project.</TEAM_LEADER>
+			</EMPLOYEE>
+		</PROJECT>
+	</DEPARTMENT>
+	<EQUIPMENT>
+		<LAPTOP CPU="I5 10Gen" RAM="16 GB" ROM="1 TB ssd" id_laptop="IDA456557">
+			<NAME_LAPTOP>Dell Inspiron A8562</NAME_LAPTOP>
+		</LAPTOP>
+		<DESK>
+			<CHAIR CHAIR_NO="150" COLOUR="BLACK" TYPE="NEW"></CHAIR>
+		</DESK>
+		<PRINTER MODEL="HP LASERJET SF-760P" ID_PRINTER="IDPrinter456557">
+			<NAME_PRINTER>HP Admincontrol printer</NAME_PRINTER>
+		</PRINTER>
+	</EQUIPMENT>
+</COMPANY>

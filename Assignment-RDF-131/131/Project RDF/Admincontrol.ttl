@@ -1,0 +1,1896 @@
+# baseURI: http://example.org/admincontrol
+
+@prefix : <http://example.org/admincontrol#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix spin: <http://spinrdf.org/spin#> .
+@prefix uni: <http://example.org/admincontrol#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+<http://example.org/admincontrol>
+  rdf:type owl:Ontology ;
+  spin:imports <http://topbraid.org/spin/rdfsplus> ;
+  owl:versionInfo "Created with TopBraid Composer" ;
+.
+uni:Abroad-sales
+  rdf:type rdfs:Class ;
+  rdfs:label "Abroad-sales" ;
+  rdfs:subClassOf uni:Sales ;
+.
+uni:Abroad-sales_1
+  rdf:type uni:Abroad-sales ;
+  uni:customerLocation "Germany" ;
+  uni:numberOfEmployees 3 ;
+  uni:title "Let's make a deal" ;
+  rdfs:label "Abroad-sales 1 LetsMakeADeal" ;
+.
+uni:Abroad-sales_2
+  rdf:type uni:Abroad-sales ;
+  uni:customerLocation "Norway" ;
+  uni:numberOfEmployees 4 ;
+  uni:title "Money Magnets" ;
+  rdfs:label "Abroad-sales 2 Money Magnets" ;
+.
+uni:Anatomic
+  rdf:type rdfs:Class ;
+  rdfs:subClassOf uni:Chair ;
+.
+uni:Anatomic_1
+  rdf:type uni:Anatomic ;
+  uni:amount 10 ;
+  uni:chairID 01 ;
+  rdfs:label "Anatomic 1" ;
+.
+uni:Android
+  rdf:type rdfs:Class ;
+  rdfs:subClassOf uni:Mobile ;
+.
+uni:Android_1
+  rdf:type uni:Android ;
+  uni:age 23 ;
+  uni:firstname "Gregory" ;
+  uni:lastname "Souliotis" ;
+  uni:personal-phone 6952016309 ;
+  uni:phone 10998 ;
+  uni:printsIn uni:Laser_2 ;
+  uni:salary "1350E" ;
+  uni:sitsOn uni:Anatomic_1 ;
+  uni:version 10 ;
+  uni:worksAt uni:Fullstack_1 ;
+  uni:worksIn uni:Windows-laptop_2 ;
+  uni:worksWith uni:Javascript_2 ;
+  uni:worrk-phone 1099862 ;
+  uni:yearsOfWork 3 ;
+  rdfs:label "Android 1 Gregory" ;
+.
+uni:Android_2
+  rdf:type uni:Android ;
+  uni:age 29 ;
+  uni:firstname "Katerina" ;
+  uni:lastname "papadopoulou" ;
+  uni:personal-phone 6985630212 ;
+  uni:phone 10456 ;
+  uni:printsIn uni:Laser_2 ;
+  uni:salary "1400E" ;
+  uni:sitsOn uni:Ergonomic_1 ;
+  uni:version 9 ;
+  uni:worksAt uni:FrontEnd_2 ;
+  uni:worksIn uni:Windows-laptop_2 ;
+  uni:worksWith uni:Html_2 ;
+  uni:worksWith uni:Javascript_1 ;
+  uni:worrk-phone 1045650 ;
+  uni:yearsOfWork 4 ;
+  rdfs:label "Android 2 Katerina" ;
+.
+uni:Android_3
+  rdf:type uni:Android ;
+  uni:age 32 ;
+  uni:firstname "Maria" ;
+  uni:lastname "Tampaki" ;
+  uni:personal-phone 6982320156 ;
+  uni:phone 10635 ;
+  uni:printsIn uni:Laser_1 ;
+  uni:salary "1500E" ;
+  uni:sitsOn uni:Anatomic_1 ;
+  uni:version 10 ;
+  uni:worksAt uni:Fullstack_2 ;
+  uni:worksIn uni:Windows-laptop_1 ;
+  uni:worksWith uni:Html_1 ;
+  uni:worksWith uni:Javascript_1 ;
+  uni:worksWith uni:Sql_3 ;
+  uni:worrk-phone 1063531 ;
+  uni:yearsOfWork 6 ;
+  rdfs:label "Android 3 Maria" ;
+.
+uni:Android_4
+  rdf:type uni:Android ;
+  uni:age 36 ;
+  uni:firstname "George" ;
+  uni:lastname "katsikaris" ;
+  uni:personal-phone 6985346019 ;
+  uni:phone 10315 ;
+  uni:printsIn uni:Laser_1 ;
+  uni:salary "1400E" ;
+  uni:sitsOn uni:Ergonomic_1 ;
+  uni:version 9 ;
+  uni:worksAt uni:BackEnd_3 ;
+  uni:worksIn uni:Windows-laptop_2 ;
+  uni:worksWith uni:Sql_3 ;
+  uni:worrk-phone 1031516 ;
+  uni:yearsOfWork 5 ;
+  rdfs:label "Android 4 George" ;
+.
+uni:Application-server
+  rdf:type rdfs:Class ;
+  rdfs:subClassOf uni:Server ;
+.
+uni:Application-server_1
+  rdf:type uni:Application-server ;
+  uni:serverName "Admincontrol-server-BO" ;
+  rdfs:label "Application-server 1" ;
+.
+uni:Application-server_2
+  rdf:type uni:Application-server ;
+  uni:serverName "Admincontrol-server-BP" ;
+  rdfs:label "Application-server 2" ;
+.
+uni:Application-server_3
+  rdf:type uni:Application-server ;
+  uni:serverName "Admincontrol-server-VDR" ;
+  rdfs:label "Application-server 3" ;
+.
+uni:BackEnd
+  rdf:type rdfs:Class ;
+  rdfs:subClassOf uni:Programming-team ;
+.
+uni:BackEnd_1
+  rdf:type uni:BackEnd ;
+  uni:numberOfEmployees 20 ;
+  uni:title "Tornado" ;
+  rdfs:label "Back end 1 Tornado" ;
+.
+uni:BackEnd_2
+  rdf:type uni:BackEnd ;
+  uni:numberOfEmployees 25 ;
+  uni:title "Hurricane" ;
+  rdfs:label "Back end 2 Hurricane" ;
+.
+uni:BackEnd_3
+  rdf:type uni:BackEnd ;
+  uni:numberOfEmployees 20 ;
+  uni:title "Platform" ;
+  rdfs:label "Back end 3 Platform" ;
+.
+uni:Business-manager
+  rdf:type rdfs:Class ;
+  rdfs:label "Business-manager" ;
+  rdfs:subClassOf uni:Emloyee ;
+.
+uni:Business-manager_1
+  rdf:type uni:Business-manager ;
+  uni:age 36 ;
+  uni:firstname "Kostas" ;
+  uni:lastname "Karakasidis" ;
+  uni:personal-phone 6979371079 ;
+  uni:phone 10083 ;
+  uni:printsIn uni:Laser_2 ;
+  uni:salary "1300E" ;
+  uni:sitsOn uni:Comfort_1 ;
+  uni:worksAt uni:Hr-team_1 ;
+  uni:worrk-phone 1008350 ;
+  uni:yearsOfWork 4 ;
+  rdfs:label "Business-manager 1 Kostas" ;
+.
+uni:Business-manager_2
+  rdf:type uni:Business-manager ;
+  uni:age 31 ;
+  uni:firstname "Sofia" ;
+  uni:lastname "Valkanou" ;
+  uni:personal-phone 6951906289 ;
+  uni:phone 10899 ;
+  uni:printsIn uni:Laser_1 ;
+  uni:salary "1200E" ;
+  uni:sitsOn uni:Ergonomic_1 ;
+  uni:worksAt uni:Hr-team_2 ;
+  uni:worrk-phone 10899 ;
+  uni:yearsOfWork 2 ;
+  rdfs:label "Business-manager 2 Sofia" ;
+.
+uni:Business-manager_3
+  rdf:type uni:Business-manager ;
+  uni:age 29 ;
+  uni:firstname "Filio" ;
+  uni:lastname "Iosifidou" ;
+  uni:personal-phone 6940563927 ;
+  uni:phone 10677 ;
+  uni:printsIn uni:Laser_1 ;
+  uni:salary "1000E" ;
+  uni:sitsOn uni:Anatomic_1 ;
+  uni:worksAt uni:Hr-team_1 ;
+  uni:worrk-phone 10222 ;
+  uni:yearsOfWork 1 ;
+  rdfs:label "Business-manager 3 Filio" ;
+.
+uni:Business-manager_4
+  rdf:type uni:Business-manager ;
+  uni:age 37 ;
+  uni:firstname "Panos" ;
+  uni:lastname "Konstantinidis" ;
+  uni:personal-phone 6980537821 ;
+  uni:phone 10456 ;
+  uni:printsIn uni:Laser_2 ;
+  uni:salary "1400E" ;
+  uni:sitsOn uni:Comfort_1 ;
+  uni:worksAt uni:Hr-team_2 ;
+  uni:worrk-phone 1045677 ;
+  uni:yearsOfWork 6 ;
+  rdfs:label "Business-manager 4 Panos" ;
+.
+uni:Chair
+  rdf:type rdfs:Class ;
+  rdfs:subClassOf uni:Desk ;
+.
+uni:Comfort
+  rdf:type rdfs:Class ;
+  rdfs:subClassOf uni:Chair ;
+.
+uni:Comfort_1
+  rdf:type uni:Comfort ;
+  uni:amount 30 ;
+  uni:chairID 02 ;
+  rdfs:label "Comfort 1" ;
+.
+uni:Comfort_2
+  rdf:type uni:Comfort ;
+  uni:amount 15 ;
+  uni:chairID 021 ;
+  rdfs:label "Comfort 2" ;
+.
+uni:CompanyTeam
+  rdf:type rdfs:Class ;
+  rdfs:subClassOf rdfs:Resource ;
+.
+uni:CompanyTool
+  rdf:type rdfs:Class ;
+  rdfs:subClassOf rdfs:Resource ;
+.
+uni:Component-testing
+  rdf:type rdfs:Class ;
+  rdfs:subClassOf uni:QA ;
+.
+uni:Component-testing_1
+  rdf:type uni:Component-testing ;
+  uni:age 33 ;
+  uni:firstname "Alexandros" ;
+  uni:lastname "Koktsidis" ;
+  uni:personal-phone 6978504039 ;
+  uni:phone 10244 ;
+  uni:printsIn uni:Laser_2 ;
+  uni:salary "1350E" ;
+  uni:sitsOn uni:Comfort_2 ;
+  uni:uses uni:Leap-work-tests_2 ;
+  uni:worksAt uni:BackEnd_2 ;
+  uni:worksOnlyIn uni:MacOs_1 ;
+  uni:worrk-phone 1024460 ;
+  uni:yearsOfWork 3 ;
+  rdfs:label "Component-testing 1 Alexandros" ;
+.
+uni:Component-testing_2
+  rdf:type uni:Component-testing ;
+  uni:age 31 ;
+  uni:firstname "Vaggelis" ;
+  uni:lastname "Kokolis" ;
+  uni:personal-phone 6978542016 ;
+  uni:phone 10455 ;
+  uni:printsIn uni:Laser_2 ;
+  uni:salary "1250E" ;
+  uni:sitsOn uni:Comfort_2 ;
+  uni:uses uni:Selenium_1 ;
+  uni:worksAt uni:FrontEnd_1 ;
+  uni:worksOnlyIn uni:MacOs_1 ;
+  uni:worrk-phone 1045520 ;
+  uni:yearsOfWork 2 ;
+  rdfs:label "Component-testing 2 vaggelis" ;
+.
+uni:Component-testing_3
+  rdf:type uni:Component-testing ;
+  uni:age 41 ;
+  uni:firstname "Elena" ;
+  uni:lastname "Papatheochari" ;
+  uni:personal-phone 6930456045 ;
+  uni:phone 10133 ;
+  uni:printsIn uni:Laser_1 ;
+  uni:salary "1500E" ;
+  uni:sitsOn uni:Ergonomic_1 ;
+  uni:uses uni:Leap-work-tests_3 ;
+  uni:worksAt uni:Fullstack_1 ;
+  uni:worksOnlyIn uni:MacOs_1 ;
+  uni:worrk-phone 1013365 ;
+  uni:yearsOfWork 4 ;
+  rdfs:label "Component-testing 3 Elena" ;
+.
+uni:Csharp
+  rdf:type rdfs:Class ;
+  rdfs:subClassOf uni:Programming ;
+.
+uni:Csharp_1
+  rdf:type uni:Csharp ;
+  uni:isKnownPerfectBy uni:Windows_1 ;
+  uni:isKnownPerfectBy uni:Windows_2 ;
+  uni:isKnownPerfectBy uni:Windows_3 ;
+  uni:isKnownPerfectBy uni:Windows_4 ;
+  uni:isKnownPerfectBy uni:Windows_5 ;
+  uni:languageVersion 10 ;
+  rdfs:label "Csharp 1 10" ;
+.
+uni:Csharp_2
+  rdf:type uni:Csharp ;
+  uni:isKnownPerfectBy uni:Web_3 ;
+  uni:isKnownPerfectBy uni:Web_5 ;
+  uni:isKnownPerfectBy uni:Web_8 ;
+  uni:languageVersion 9 ;
+  rdfs:label "Csharp 2 9" ;
+.
+uni:Csharp_3
+  rdf:type uni:Csharp ;
+  uni:isKnownPerfectBy uni:Game3d_1 ;
+  uni:isKnownPerfectBy uni:Game3d_3 ;
+  uni:languageVersion 8 ;
+  rdfs:label "Csharp 3 8" ;
+.
+uni:Curve
+  rdf:type rdfs:Class ;
+  rdfs:subClassOf uni:Monitor ;
+.
+uni:Curve_1
+  rdf:type uni:Curve ;
+  uni:amount 40 ;
+  uni:inches 24 ;
+  rdfs:label "Curve 1" ;
+.
+uni:Database-server
+  rdf:type rdfs:Class ;
+  rdfs:subClassOf uni:Server ;
+.
+uni:Database-server_1
+  rdf:type uni:Database-server ;
+  uni:isWrittenBy uni:Sql_1 ;
+  uni:serverName "Admincontrol-DAC-DB" ;
+  rdfs:label "Database-server 1" ;
+.
+uni:Database-server_2
+  rdf:type uni:Database-server ;
+  uni:isWrittenBy uni:Sql_2 ;
+  uni:serverName "Admincontrol-SAC-DB" ;
+  rdfs:label "Database-server 2" ;
+.
+uni:Database-server_3
+  rdf:type uni:Database-server ;
+  uni:isWrittenBy uni:Sql_3 ;
+  uni:serverName "Admincontrol-VAC-DB" ;
+  rdfs:label "Database-server 3" ;
+.
+uni:Database-server_4
+  rdf:type uni:Database-server ;
+  uni:isWrittenBy uni:Sql_3 ;
+  uni:serverName "Admincontrol-PROD-DB" ;
+  rdfs:label "Database-server 4" ;
+.
+uni:Desk
+  rdf:type rdfs:Class ;
+  rdfs:subClassOf uni:Equipment ;
+.
+uni:Developer
+  rdf:type rdfs:Class ;
+  rdfs:subClassOf uni:Emloyee ;
+.
+uni:Economist
+  rdf:type rdfs:Class ;
+  rdfs:label "Economist" ;
+  rdfs:subClassOf uni:Emloyee ;
+.
+uni:Economist_1
+  rdf:type uni:Economist ;
+  uni:age 31 ;
+  uni:firstname "Spiros" ;
+  uni:lastname "Giannakis" ;
+  uni:personal-phone 6976291056 ;
+  uni:phone 10311 ;
+  uni:printsIn uni:Laser_2 ;
+  uni:salary "1200E" ;
+  uni:sitsOn uni:Anatomic_1 ;
+  uni:worksAt uni:Abroad-sales_1 ;
+  uni:worrk-phone 1031121 ;
+  uni:yearsOfWork 3 ;
+  rdfs:label "Economist 1 Spiros" ;
+.
+uni:Economist_2
+  rdf:type uni:Economist ;
+  uni:age 33 ;
+  uni:firstname "Stelios" ;
+  uni:lastname "Lambrou" ;
+  uni:personal-phone 6930872197 ;
+  uni:phone 10925 ;
+  uni:printsIn uni:Laser_1 ;
+  uni:salary "1350E" ;
+  uni:sitsOn uni:Ergonomic_1 ;
+  uni:worksAt uni:Abroad-sales_2 ;
+  uni:worrk-phone 1092526 ;
+  uni:yearsOfWork 4 ;
+  rdfs:label "Economist 2 Stelios" ;
+.
+uni:Economist_3
+  rdf:type uni:Economist ;
+  uni:age 32 ;
+  uni:firstname "Nadia" ;
+  uni:lastname "Tsaliki" ;
+  uni:personal-phone 6939216033 ;
+  uni:phone 10784 ;
+  uni:printsIn uni:Laser_1 ;
+  uni:salary "1250E" ;
+  uni:sitsOn uni:Comfort_1 ;
+  uni:worksAt uni:Local-sales_1 ;
+  uni:worrk-phone 1078499 ;
+  uni:yearsOfWork 2 ;
+  rdfs:label "Economist 3 Nadia" ;
+.
+uni:Economist_4
+  rdf:type uni:Economist ;
+  uni:age 35 ;
+  uni:firstname "Athanasia" ;
+  uni:lastname "Giannopoulou" ;
+  uni:personal-phone 6931896349 ;
+  uni:phone 10239 ;
+  uni:printsIn uni:Laser_2 ;
+  uni:salary "1400E" ;
+  uni:sitsOn uni:Comfort_1 ;
+  uni:worksAt uni:Local-sales_2 ;
+  uni:worrk-phone 1023977 ;
+  uni:yearsOfWork 6 ;
+  rdfs:label "Economist 4 Athanasia" ;
+.
+uni:Economist_5
+  rdf:type uni:Economist ;
+  uni:age 34 ;
+  uni:firstname "Stathis" ;
+  uni:lastname "Kontostergios" ;
+  uni:personal-phone 6939274037 ;
+  uni:phone 10955 ;
+  uni:printsIn uni:Laser_1 ;
+  uni:salary "1300E" ;
+  uni:sitsOn uni:Ergonomic_1 ;
+  uni:worksAt uni:Abroad-sales_2 ;
+  uni:worrk-phone 10955 ;
+  uni:yearsOfWork 4 ;
+  rdfs:label "Economist 5 Stathis" ;
+.
+uni:Economist_6
+  rdf:type uni:Economist ;
+  uni:age 28 ;
+  uni:firstname "Nikoleta" ;
+  uni:lastname "Elenidou" ;
+  uni:personal-phone 6937295043 ;
+  uni:phone 10611 ;
+  uni:printsIn uni:Laser_2 ;
+  uni:salary "1150E" ;
+  uni:sitsOn uni:Comfort_2 ;
+  uni:worksAt uni:Local-sales_1 ;
+  uni:worrk-phone 1061121 ;
+  uni:yearsOfWork 2 ;
+  rdfs:label "Economist 6 Nikoleta" ;
+.
+uni:Emloyee
+  rdf:type rdfs:Class ;
+  rdfs:subClassOf rdfs:Resource ;
+.
+uni:Equipment
+  rdf:type rdfs:Class ;
+  rdfs:subClassOf rdfs:Resource ;
+.
+uni:Ergonomic
+  rdf:type rdfs:Class ;
+  rdfs:subClassOf uni:Chair ;
+.
+uni:Ergonomic_1
+  rdf:type uni:Ergonomic ;
+  uni:amount 20 ;
+  uni:chairID 03 ;
+  rdfs:label "Ergonomic 1" ;
+.
+uni:FrontEnd
+  rdf:type rdfs:Class ;
+  rdfs:subClassOf uni:Programming-team ;
+.
+uni:FrontEnd_1
+  rdf:type uni:FrontEnd ;
+  uni:numberOfEmployees 26 ;
+  uni:title "Angular" ;
+  rdfs:label "Front end 1 Angular" ;
+.
+uni:FrontEnd_2
+  rdf:type uni:FrontEnd ;
+  uni:numberOfEmployees 30 ;
+  uni:title "Frontninza" ;
+  rdfs:label "Front end 2 Frontninza" ;
+.
+uni:Fullstack
+  rdf:type rdfs:Class ;
+  rdfs:subClassOf uni:Programming-team ;
+.
+uni:Fullstack_1
+  rdf:type uni:Fullstack ;
+  uni:numberOfEmployees 30 ;
+  uni:title "Platform Cloud" ;
+  rdfs:label "Fullstack 1 PC" ;
+.
+uni:Fullstack_2
+  rdf:type uni:Fullstack ;
+  uni:numberOfEmployees 30 ;
+  uni:title "FireStack" ;
+  rdfs:label "Fullstack 2 FireStack" ;
+.
+uni:Game
+  rdf:type rdfs:Class ;
+  rdfs:subClassOf uni:Developer ;
+.
+uni:Game2d
+  rdf:type rdfs:Class ;
+  rdfs:subClassOf uni:Game ;
+.
+uni:Game2d_1
+  rdf:type uni:Game2d ;
+  uni:age 28 ;
+  uni:firstname "John" ;
+  uni:lastname "Poulios" ;
+  uni:personal-phone 6945698323 ;
+  uni:phone 10189 ;
+  uni:printsIn uni:Laser_2 ;
+  uni:salary "1400E" ;
+  uni:sitsOn uni:Anatomic_1 ;
+  uni:worksAt uni:FrontEnd_1 ;
+  uni:worksIn uni:Windows-laptop_2 ;
+  uni:worksWith uni:Html_2 ;
+  uni:worksWith uni:Javascript_1 ;
+  uni:worrk-phone 1018963 ;
+  uni:yearsOfWork 3 ;
+  rdfs:label "Game 2d John" ;
+.
+uni:Game2d_2
+  rdf:type uni:Game2d ;
+  uni:age 36 ;
+  uni:firstname "Kostas" ;
+  uni:lastname "Kapetanios" ;
+  uni:personal-phone 6986235020 ;
+  uni:phone 10552 ;
+  uni:printsIn uni:Laser_1 ;
+  uni:salary "1500E" ;
+  uni:sitsOn uni:Gaming_2 ;
+  uni:worksAt uni:Fullstack_1 ;
+  uni:worksIn uni:Windows-laptop_1 ;
+  uni:worksWith uni:Csharp_2 ;
+  uni:worksWith uni:Html_2 ;
+  uni:worksWith uni:Sql_1 ;
+  uni:worrk-phone 1055236 ;
+  uni:yearsOfWork 5 ;
+  rdfs:label "Game 2d Kostas" ;
+.
+uni:Game2d_3
+  rdf:type uni:Game2d ;
+  uni:age 29 ;
+  uni:firstname "Chris" ;
+  uni:lastname "Millis" ;
+  uni:personal-phone 6985632012 ;
+  uni:phone 10677 ;
+  uni:printsIn uni:Laser_2 ;
+  uni:salary "1450E" ;
+  uni:sitsOn uni:Gaming_1 ;
+  uni:worksAt uni:BackEnd_3 ;
+  uni:worksIn uni:Windows-laptop_2 ;
+  uni:worksWith uni:Sql_3 ;
+  uni:worrk-phone 1067789 ;
+  uni:yearsOfWork 4 ;
+  rdfs:label "Game 2d Chris" ;
+.
+uni:Game2d_4
+  rdf:type uni:Game2d ;
+  uni:age 26 ;
+  uni:firstname "Manos" ;
+  uni:lastname "Marakis" ;
+  uni:personal-phone 6982364120 ;
+  uni:phone 10989 ;
+  uni:printsIn uni:Laser_2 ;
+  uni:salary "1350E" ;
+  uni:sitsOn uni:Gaming_2 ;
+  uni:worksAt uni:Fullstack_1 ;
+  uni:worksIn uni:Windows-laptop_1 ;
+  uni:worksWith uni:Csharp_3 ;
+  uni:worksWith uni:Html_2 ;
+  uni:worksWith uni:Javascript_2 ;
+  uni:worksWith uni:Sql_2 ;
+  uni:worrk-phone 1098962 ;
+  uni:yearsOfWork 3 ;
+  rdfs:label "Game 2d Manos" ;
+.
+uni:Game2d_5
+  rdf:type uni:Game2d ;
+  uni:age 31 ;
+  uni:firstname "Gregory" ;
+  uni:lastname "Makris" ;
+  uni:personal-phone 6982143652 ;
+  uni:phone 10008 ;
+  uni:printsIn uni:Laser_1 ;
+  uni:salary "1250E" ;
+  uni:sitsOn uni:Gaming_2 ;
+  uni:worksAt uni:Fullstack_2 ;
+  uni:worksIn uni:Windows-laptop_2 ;
+  uni:worksWith uni:Csharp_2 ;
+  uni:worksWith uni:Javascript_1 ;
+  uni:worksWith uni:Sql_1 ;
+  uni:worrk-phone 1000896 ;
+  uni:yearsOfWork 2 ;
+  rdfs:label "Game2d Gregory" ;
+.
+uni:Game3d
+  rdf:type rdfs:Class ;
+  rdfs:subClassOf uni:Game ;
+.
+uni:Game3d_1
+  rdf:type uni:Game3d ;
+  uni:age 25 ;
+  uni:firstname "Nikos" ;
+  uni:lastname "Iosifidis" ;
+  uni:personal-phone 6923641059 ;
+  uni:phone 10067 ;
+  uni:printsIn uni:ThreeD_1 ;
+  uni:salary "1150E" ;
+  uni:sitsOn uni:Ergonomic_1 ;
+  uni:worksAt uni:BackEnd_2 ;
+  uni:worksIn uni:Windows-laptop_2 ;
+  uni:worksWith uni:Sql_2 ;
+  uni:worrk-phone 1006785 ;
+  uni:yearsOfWork 1 ;
+  rdfs:label "Game3d Nikos" ;
+.
+uni:Game3d_2
+  rdf:type uni:Game3d ;
+  uni:age 29 ;
+  uni:firstname "Petros" ;
+  uni:lastname "Petridis" ;
+  uni:personal-phone 6985362018 ;
+  uni:phone 10007 ;
+  uni:printsIn uni:ThreeD_1 ;
+  uni:salary "1250E" ;
+  uni:sitsOn uni:Comfort_1 ;
+  uni:worksAt uni:FrontEnd_1 ;
+  uni:worksIn uni:Windows-laptop_2 ;
+  uni:worksWith uni:Html_2 ;
+  uni:worksWith uni:Javascript_2 ;
+  uni:worrk-phone 1000780 ;
+  uni:yearsOfWork 2 ;
+  rdfs:label "Game3d Petros" ;
+.
+uni:Game3d_3
+  rdf:type uni:Game3d ;
+  uni:age 26 ;
+  uni:firstname "Dimitris" ;
+  uni:lastname "Kosotopoulos" ;
+  uni:personal-phone 6952346097 ;
+  uni:phone 10293 ;
+  uni:printsIn uni:ThreeD_1 ;
+  uni:salary "1350E" ;
+  uni:sitsOn uni:Comfort_2 ;
+  uni:worksAt uni:Fullstack_2 ;
+  uni:worksIn uni:Windows-laptop_1 ;
+  uni:worksWith uni:Csharp_2 ;
+  uni:worksWith uni:Html_1 ;
+  uni:worksWith uni:Javascript_2 ;
+  uni:worrk-phone 1029364 ;
+  uni:yearsOfWork 3 ;
+  rdfs:label "Game3d Dimitris" ;
+.
+uni:Game3d_4
+  rdf:type uni:Game3d ;
+  uni:age 36 ;
+  uni:firstname "Alexis" ;
+  uni:lastname "Tsapekos" ;
+  uni:personal-phone 6945603208 ;
+  uni:phone 10459 ;
+  uni:printsIn uni:ThreeD_1 ;
+  uni:salary "1300E" ;
+  uni:sitsOn uni:Anatomic_1 ;
+  uni:worksAt uni:BackEnd_1 ;
+  uni:worksIn uni:Windows-laptop_2 ;
+  uni:worksWith uni:Sql_3 ;
+  uni:worrk-phone 1045960 ;
+  uni:yearsOfWork 3 ;
+  rdfs:label "Game3d Alexis" ;
+.
+uni:Gaming
+  rdf:type rdfs:Class ;
+  rdfs:subClassOf uni:Chair ;
+.
+uni:Gaming_1
+  rdf:type uni:Gaming ;
+  uni:amount 15 ;
+  uni:chairID 04 ;
+  rdfs:label "Gaming 1" ;
+.
+uni:Gaming_2
+  rdf:type uni:Gaming ;
+  uni:amount 10 ;
+  uni:chairID 041 ;
+  rdfs:label "Gaming 2" ;
+.
+uni:HR
+  rdf:type rdfs:Class ;
+  rdfs:label "Hr-team" ;
+  rdfs:subClassOf uni:CompanyTeam ;
+.
+uni:Hr-team_1
+  rdf:type uni:HR ;
+  uni:numberOfEmployees 5 ;
+  uni:title "Talent Seekers & Keepers." ;
+  rdfs:label "Hr-team 1 TalentSeekersAndKeepers" ;
+.
+uni:Hr-team_2
+  rdf:type uni:HR ;
+  uni:numberOfEmployees 2 ;
+  uni:title "Team Growth" ;
+  rdfs:label "Hr-team 2 TeamGrowth" ;
+.
+uni:Html
+  rdf:type rdfs:Class ;
+  rdfs:subClassOf uni:Programming ;
+.
+uni:Html_1
+  rdf:type uni:Html ;
+  uni:isKnownPerfectBy uni:Game2d_1 ;
+  uni:isKnownPerfectBy uni:Game2d_2 ;
+  uni:isKnownPerfectBy uni:Game2d_3 ;
+  uni:isKnownPerfectBy uni:Game2d_4 ;
+  uni:isKnownPerfectBy uni:Game2d_5 ;
+  uni:languageVersion 4 ;
+  rdfs:label "Html 1 4" ;
+.
+uni:Html_2
+  rdf:type uni:Html ;
+  uni:isKnownPerfectBy uni:Game3d_1 ;
+  uni:isKnownPerfectBy uni:Game3d_2 ;
+  uni:isKnownPerfectBy uni:Game3d_3 ;
+  uni:isKnownPerfectBy uni:Game3d_4 ;
+  uni:languageVersion 5 ;
+  rdfs:label "Html 2 5" ;
+.
+uni:IOS
+  rdf:type rdfs:Class ;
+  rdfs:subClassOf uni:Mobile ;
+.
+uni:IOS_1
+  rdf:type uni:IOS ;
+  uni:age 26 ;
+  uni:firstname "Niki" ;
+  uni:lastname "Andreadou" ;
+  uni:personal-phone 6986320157 ;
+  uni:phone 10077 ;
+  uni:printsIn uni:Laser_2 ;
+  uni:salary "1450E" ;
+  uni:sitsOn uni:Anatomic_1 ;
+  uni:version 3 ;
+  uni:worksAt uni:Fullstack_1 ;
+  uni:worksIn uni:Windows-laptop_1 ;
+  uni:worksWith uni:Csharp_3 ;
+  uni:worksWith uni:Html_2 ;
+  uni:worrk-phone 1007788 ;
+  uni:yearsOfWork 5 ;
+  rdfs:label "IOS 1 Niki" ;
+.
+uni:IOS_2
+  rdf:type uni:IOS ;
+  uni:age 34 ;
+  uni:firstname "Stratos" ;
+  uni:lastname "Stratigakis" ;
+  uni:personal-phone 6982345690 ;
+  uni:phone 10693 ;
+  uni:printsIn uni:Laser_1 ;
+  uni:salary "1500E" ;
+  uni:sitsOn uni:Ergonomic_1 ;
+  uni:version 4 ;
+  uni:worksAt uni:BackEnd_2 ;
+  uni:worksIn uni:Windows-laptop_1 ;
+  uni:worksWith uni:Sql_2 ;
+  uni:worrk-phone 1069392 ;
+  uni:yearsOfWork 6 ;
+  rdfs:label "IOS 2 Stratos" ;
+.
+uni:IOS_3
+  rdf:type uni:IOS ;
+  uni:age 40 ;
+  uni:firstname "Chara" ;
+  uni:lastname "Manini" ;
+  uni:personal-phone 6930246530 ;
+  uni:phone 10631 ;
+  uni:printsIn uni:Laser_2 ;
+  uni:salary "1650E" ;
+  uni:sitsOn uni:Comfort_1 ;
+  uni:version 4 ;
+  uni:worksAt uni:Fullstack_1 ;
+  uni:worksIn uni:Windows-laptop_1 ;
+  uni:worksWith uni:Csharp_2 ;
+  uni:worksWith uni:Javascript_1 ;
+  uni:worksWith uni:Sql_1 ;
+  uni:worrk-phone 1063132 ;
+  uni:yearsOfWork 7 ;
+  rdfs:label "IOS 3 Chara" ;
+.
+uni:Integration-testing
+  rdf:type rdfs:Class ;
+  rdfs:subClassOf uni:QA ;
+.
+uni:Integration-testing_1
+  rdf:type uni:Integration-testing ;
+  uni:age 32 ;
+  uni:firstname "Dimitra" ;
+  uni:lastname "Vartzoka" ;
+  uni:personal-phone 6978605430 ;
+  uni:phone 10688 ;
+  uni:printsIn uni:Laser_2 ;
+  uni:salary "1480E" ;
+  uni:sitsOn uni:Anatomic_1 ;
+  uni:uses uni:Leap-work-tests_2 ;
+  uni:worksAt uni:BackEnd_1 ;
+  uni:worksOnlyIn uni:MacOs_1 ;
+  uni:worrk-phone 1068891 ;
+  uni:yearsOfWork 4 ;
+  rdfs:label "Integration-testing 1 Dimitra" ;
+.
+uni:Integration-testing_2
+  rdf:type uni:Integration-testing ;
+  uni:age 28 ;
+  uni:firstname "Odisseas" ;
+  uni:lastname "Masmanidis" ;
+  uni:personal-phone 6980543010 ;
+  uni:phone 10550 ;
+  uni:printsIn uni:Laser_1 ;
+  uni:salary "1200E" ;
+  uni:sitsOn uni:Comfort_2 ;
+  uni:uses uni:Selenium_1 ;
+  uni:worksAt uni:Fullstack_1 ;
+  uni:worksOnlyIn uni:MacOs_1 ;
+  uni:worrk-phone 1055060 ;
+  uni:yearsOfWork 1 ;
+  rdfs:label "Integration-testing 2 Odisseas" ;
+.
+uni:Javascript
+  rdf:type rdfs:Class ;
+  rdfs:subClassOf uni:Programming ;
+.
+uni:Javascript_1
+  rdf:type uni:Javascript ;
+  uni:isKnownPerfectBy uni:Android_1 ;
+  uni:isKnownPerfectBy uni:Android_2 ;
+  uni:isKnownPerfectBy uni:Android_3 ;
+  uni:isKnownPerfectBy uni:Android_4 ;
+  uni:languageVersion 20 ;
+  rdfs:label "Javascript 1 20" ;
+.
+uni:Javascript_2
+  rdf:type uni:Javascript ;
+  uni:isKnownPerfectBy uni:IOS_1 ;
+  uni:isKnownPerfectBy uni:IOS_2 ;
+  uni:isKnownPerfectBy uni:IOS_3 ;
+  uni:languageVersion 19 ;
+  rdfs:label "Javascript 2 19" ;
+.
+uni:Language
+  rdf:type rdfs:Class ;
+  rdfs:subClassOf uni:Software ;
+.
+uni:Laptop
+  rdf:type rdfs:Class ;
+  rdfs:subClassOf uni:Equipment ;
+.
+uni:Laser
+  rdf:type rdfs:Class ;
+  rdfs:subClassOf uni:Printer ;
+.
+uni:Laser_1
+  rdf:type uni:Laser ;
+  uni:colors "true"^^xsd:boolean ;
+  uni:watts 35 ;
+  rdfs:label "Laser 1 Colors" ;
+.
+uni:Laser_2
+  rdf:type uni:Laser ;
+  uni:colors "false"^^xsd:boolean ;
+  uni:watts 45 ;
+  rdfs:label "Laser 2 BW" ;
+.
+uni:Leap-work-tests
+  rdf:type rdfs:Class ;
+  rdfs:subClassOf uni:Testing ;
+.
+uni:Leap-work-tests_1
+  rdfs:label " " ;
+.
+uni:Leap-work-tests_2
+  rdf:type uni:Leap-work-tests ;
+  uni:languageVersion 2020 ;
+  rdfs:label "Leap-work-tests 2 2020" ;
+.
+uni:Leap-work-tests_3
+  rdf:type uni:Leap-work-tests ;
+  uni:languageVersion 2022 ;
+  rdfs:label "Leap-work-tests 3 2022" ;
+.
+uni:Linux
+  rdf:type rdfs:Class ;
+  rdfs:subClassOf uni:Laptop ;
+.
+uni:Linux_1
+  rdf:type uni:Linux ;
+  uni:cores 8 ;
+  uni:nameBrand "HP" ;
+  uni:osVersion "10.02" ;
+  uni:ram 16 ;
+  uni:rom 512 ;
+  rdfs:label "Linux 1 HP" ;
+.
+uni:Linux_2
+  rdf:type uni:Linux ;
+  uni:cores 8 ;
+  uni:nameBrand "Dell" ;
+  uni:osVersion "10.06" ;
+  uni:ram 32 ;
+  uni:rom 256 ;
+  rdfs:label "Linux 2 DELL" ;
+.
+uni:Local-sales
+  rdf:type rdfs:Class ;
+  rdfs:label "Local-sales" ;
+  rdfs:subClassOf uni:Sales ;
+.
+uni:Local-sales_1
+  rdf:type uni:Local-sales ;
+  uni:customerLocation "Thessaloniki" ;
+  uni:numberOfEmployees 3 ;
+  uni:title "Northerns" ;
+  rdfs:label "Local-sales 1 Northerns" ;
+.
+uni:Local-sales_2
+  rdf:type uni:Local-sales ;
+  uni:customerLocation "Athens" ;
+  uni:numberOfEmployees 5 ;
+  uni:title "Southers" ;
+  rdfs:label "Local-sales 2 Southers" ;
+.
+uni:MacOs
+  rdf:type rdfs:Class ;
+  rdfs:subClassOf uni:Laptop ;
+.
+uni:MacOs_1
+  rdf:type uni:MacOs ;
+  uni:cores 8 ;
+  uni:nameBrand "Apple" ;
+  uni:osVersion "7.0" ;
+  uni:ram 16 ;
+  uni:rom 512 ;
+  rdfs:label "Mac os 1 Apple" ;
+.
+uni:Mail-server
+  rdf:type rdfs:Class ;
+  rdfs:subClassOf uni:Server ;
+.
+uni:Mail-server_1
+  rdf:type uni:Mail-server ;
+  uni:serverName "Mailjet" ;
+  rdfs:label "Mail-server 1" ;
+.
+uni:Mail-server_2
+  rdf:type uni:Mail-server ;
+  uni:serverName "Zoho" ;
+  rdfs:label "Mail-server 2" ;
+.
+uni:Manager
+  rdf:type rdfs:Class ;
+  rdfs:subClassOf uni:Team-leader ;
+.
+uni:Manager_1
+  rdf:type uni:Manager ;
+  uni:age 46 ;
+  uni:firstname "Menelaos" ;
+  uni:lastname "Sismanidis" ;
+  uni:leads uni:BackEnd_1 ;
+  uni:personal-phone 6974563189 ;
+  uni:phone 10785 ;
+  uni:printsIn uni:Laser_2 ;
+  uni:salary "1650E" ;
+  uni:sitsOn uni:Anatomic_1 ;
+  uni:worksAt uni:BackEnd_1 ;
+  uni:worrk-phone 1078556 ;
+  uni:yearsOfWork 4 ;
+  rdfs:label "Manager 1 Menelaos" ;
+.
+uni:Manager_2
+  rdf:type uni:Manager ;
+  uni:age 41 ;
+  uni:firstname "Theodora" ;
+  uni:lastname "Gerousi" ;
+  uni:leads uni:BackEnd_2 ;
+  uni:leads uni:BackEnd_3 ;
+  uni:personal-phone 6976498137 ;
+  uni:phone 10696 ;
+  uni:printsIn uni:Laser_2 ;
+  uni:salary "1550E" ;
+  uni:sitsOn uni:Ergonomic_1 ;
+  uni:worksAt uni:BackEnd_3 ;
+  uni:worrk-phone 1069698 ;
+  uni:yearsOfWork 5 ;
+  rdfs:label "Manager 2 Theodora" ;
+.
+uni:Manager_3
+  rdf:type uni:Manager ;
+  uni:age 50 ;
+  uni:firstname "Takis" ;
+  uni:lastname "Patakis" ;
+  uni:leads uni:Fullstack_1 ;
+  uni:personal-phone 6982459637 ;
+  uni:phone 10009 ;
+  uni:printsIn uni:Laser_2 ;
+  uni:salary "1700E" ;
+  uni:sitsOn uni:Comfort_1 ;
+  uni:worksAt uni:FrontEnd_2 ;
+  uni:worrk-phone 1000906 ;
+  uni:yearsOfWork 7 ;
+  rdfs:label "Manager 3 Takis" ;
+.
+uni:Mobile
+  rdf:type rdfs:Class ;
+  rdfs:subClassOf uni:Developer ;
+.
+uni:Monitor
+  rdf:type rdfs:Class ;
+  rdfs:subClassOf uni:Desk ;
+.
+uni:Performance-testing
+  rdf:type rdfs:Class ;
+  rdfs:subClassOf uni:QA ;
+.
+uni:Performance-testing_1
+  rdf:type uni:Performance-testing ;
+  uni:age 26 ;
+  uni:firstname "Dimitris" ;
+  uni:lastname "tsaligopoulos" ;
+  uni:personal-phone 6970462056 ;
+  uni:phone 10440 ;
+  uni:printsIn uni:Laser_2 ;
+  uni:salary "1300E" ;
+  uni:sitsOn uni:Ergonomic_1 ;
+  uni:uses uni:Selenium_1 ;
+  uni:worksAt uni:Fullstack_2 ;
+  uni:worksOnlyIn uni:MacOs_1 ;
+  uni:worrk-phone 1044030 ;
+  uni:yearsOfWork 3 ;
+  rdfs:label "Performance-testing 1 Dimitris" ;
+.
+uni:Performance-testing_2
+  rdf:type uni:Performance-testing ;
+  uni:age 28 ;
+  uni:firstname "Nefeli" ;
+  uni:lastname "Tsioka" ;
+  uni:personal-phone 6950462018 ;
+  uni:phone 10721 ;
+  uni:printsIn uni:Laser_2 ;
+  uni:salary "1250E" ;
+  uni:sitsOn uni:Comfort_1 ;
+  uni:uses uni:Selenium_3 ;
+  uni:worksAt uni:BackEnd_3 ;
+  uni:worksOnlyIn uni:MacOs_1 ;
+  uni:worrk-phone 1072122 ;
+  uni:yearsOfWork 2 ;
+  rdfs:label "Performance-testing 2 Nefeli" ;
+.
+uni:Performance-testing_3
+  rdf:type uni:Performance-testing ;
+  uni:age 25 ;
+  uni:firstname "Athina" ;
+  uni:lastname "Kadoglou" ;
+  uni:personal-phone 6975246080 ;
+  uni:phone 10333 ;
+  uni:printsIn uni:Laser_1 ;
+  uni:salary "1600E" ;
+  uni:sitsOn uni:Gaming_1 ;
+  uni:uses uni:Selenium_2 ;
+  uni:worksAt uni:BackEnd_2 ;
+  uni:worksOnlyIn uni:MacOs_1 ;
+  uni:worrk-phone 1033322 ;
+  uni:yearsOfWork 7 ;
+  rdfs:label "Performance-testing 3 Athina" ;
+.
+uni:Printer
+  rdf:type rdfs:Class ;
+  rdfs:subClassOf uni:Equipment ;
+.
+uni:Programming
+  rdf:type rdfs:Class ;
+  rdfs:subClassOf uni:Language ;
+.
+uni:Programming-team
+  rdf:type rdfs:Class ;
+  rdfs:subClassOf uni:CompanyTeam ;
+.
+uni:QA
+  rdf:type rdfs:Class ;
+  rdfs:subClassOf uni:Emloyee ;
+.
+uni:Sales
+  rdf:type rdfs:Class ;
+  rdfs:label "Sales-team" ;
+  rdfs:subClassOf uni:CompanyTeam ;
+.
+uni:Selenium
+  rdf:type rdfs:Class ;
+  rdfs:subClassOf uni:Testing ;
+.
+uni:Selenium_1
+  rdf:type uni:Selenium ;
+  uni:languageVersion 20 ;
+  rdfs:label "Selenium 1 20" ;
+.
+uni:Selenium_2
+  rdf:type uni:Selenium ;
+  uni:languageVersion 18 ;
+  rdfs:label "Selenium 2 18" ;
+.
+uni:Selenium_3
+  rdf:type uni:Selenium ;
+  uni:languageVersion 16 ;
+  rdfs:label "Selenium 3" ;
+.
+uni:Server
+  rdf:type rdfs:Class ;
+  rdfs:subClassOf uni:CompanyTool ;
+.
+uni:Software
+  rdf:type rdfs:Class ;
+  rdfs:subClassOf uni:CompanyTool ;
+.
+uni:Sql
+  rdf:type rdfs:Class ;
+  rdfs:subClassOf uni:Programming ;
+.
+uni:Sql_1
+  rdf:type uni:Sql ;
+  uni:isKnownPerfectBy uni:Web_10 ;
+  uni:isKnownPerfectBy uni:Web_14 ;
+  uni:isKnownPerfectBy uni:Web_2 ;
+  uni:languageVersion 2018 ;
+  rdfs:label "Sql 1 2018" ;
+.
+uni:Sql_2
+  rdf:type uni:Sql ;
+  uni:isKnownPerfectBy uni:Web_6 ;
+  uni:isKnownPerfectBy uni:Web_9 ;
+  uni:languageVersion 2019 ;
+  rdfs:label "Sql 2 2019" ;
+.
+uni:Sql_3
+  rdf:type uni:Sql ;
+  uni:isKnownPerfectBy uni:Windows_1 ;
+  uni:isKnownPerfectBy uni:Windows_5 ;
+  uni:languageVersion 2022 ;
+  rdfs:label "Sql 3 2022" ;
+.
+uni:Sql_4
+  rdf:type uni:Sql ;
+  rdfs:label "Sql 4" ;
+.
+uni:Standard
+  rdf:type rdfs:Class ;
+  rdfs:subClassOf uni:Monitor ;
+.
+uni:Standard_1
+  rdf:type uni:Standard ;
+  uni:amount 30 ;
+  uni:inches 28 ;
+  rdfs:label "Standard 1" ;
+.
+uni:Team-leader
+  rdf:type rdfs:Class ;
+  rdfs:subClassOf uni:Emloyee ;
+.
+uni:Tech
+  rdf:type rdfs:Class ;
+  rdfs:subClassOf uni:Team-leader ;
+.
+uni:Tech_1
+  rdf:type uni:Tech ;
+  uni:age 47 ;
+  uni:firstname "Stelios" ;
+  uni:lastname "Baltagiannis" ;
+  uni:leads uni:Fullstack_1 ;
+  uni:personal-phone 6971250390 ;
+  uni:phone 10288 ;
+  uni:printsIn uni:Laser_1 ;
+  uni:salary "1600E" ;
+  uni:sitsOn uni:Ergonomic_1 ;
+  uni:worksAt uni:Fullstack_1 ;
+  uni:worrk-phone 1028898 ;
+  uni:yearsOfWork 6 ;
+  rdfs:label "Tech 1 Stelios" ;
+.
+uni:Tech_2
+  rdf:type uni:Tech ;
+  uni:age 39 ;
+  uni:firstname "Eva" ;
+  uni:lastname "Savidou" ;
+  uni:leads uni:Fullstack_2 ;
+  uni:personal-phone 6946389520 ;
+  uni:phone 10007 ;
+  uni:printsIn uni:ThreeD_1 ;
+  uni:salary "1500E" ;
+  uni:sitsOn uni:Ergonomic_1 ;
+  uni:worksAt uni:FrontEnd_1 ;
+  uni:worrk-phone 1000789 ;
+  uni:yearsOfWork 6 ;
+  rdfs:label "Tech 2 Eva" ;
+.
+uni:Tech_3
+  rdf:type uni:Tech ;
+  uni:age 36 ;
+  uni:firstname "Ioanna" ;
+  uni:lastname "Xatzisava" ;
+  uni:leads uni:FrontEnd_1 ;
+  uni:personal-phone 6975699660 ;
+  uni:phone 10696 ;
+  uni:printsIn uni:Laser_2 ;
+  uni:salary "1650E" ;
+  uni:sitsOn uni:Anatomic_1 ;
+  uni:worksAt uni:FrontEnd_1 ;
+  uni:worrk-phone 1069678 ;
+  uni:yearsOfWork 6 ;
+  rdfs:label "Tech 3 Ioanna" ;
+.
+uni:Testing
+  rdf:type rdfs:Class ;
+  rdfs:subClassOf uni:Language ;
+.
+uni:ThreeD
+  rdf:type rdfs:Class ;
+  rdfs:subClassOf uni:Printer ;
+.
+uni:ThreeD_1
+  rdf:type uni:ThreeD ;
+  uni:colors "true"^^xsd:boolean ;
+  uni:watts 50 ;
+  rdfs:label "Three d 1 HP" ;
+.
+uni:Unit-testing
+  rdf:type rdfs:Class ;
+  rdfs:subClassOf uni:QA ;
+.
+uni:Unit-testing_1
+  rdf:type uni:Unit-testing ;
+  uni:age 27 ;
+  uni:firstname "John" ;
+  uni:lastname "Athanasiou" ;
+  uni:personal-phone 6940563018 ;
+  uni:phone 10499 ;
+  uni:printsIn uni:Laser_1 ;
+  uni:salary "1450E" ;
+  uni:sitsOn uni:Anatomic_1 ;
+  uni:uses uni:Leap-work-tests_2 ;
+  uni:worksAt uni:BackEnd_1 ;
+  uni:worksOnlyIn uni:MacOs_1 ;
+  uni:worrk-phone 1049960 ;
+  uni:yearsOfWork 4 ;
+  rdfs:label "Unit-testing 1 John" ;
+.
+uni:Unit-testing_2
+  rdf:type uni:Unit-testing ;
+  uni:age 26 ;
+  uni:firstname "Veronica" ;
+  uni:lastname "Vasiliou" ;
+  uni:personal-phone 6978504329 ;
+  uni:phone 10017 ;
+  uni:printsIn uni:Laser_2 ;
+  uni:salary "1350E" ;
+  uni:sitsOn uni:Comfort_2 ;
+  uni:uses uni:Selenium_1 ;
+  uni:worksAt uni:FrontEnd_2 ;
+  uni:worksOnlyIn uni:MacOs_1 ;
+  uni:worrk-phone 1001778 ;
+  uni:yearsOfWork 4 ;
+  rdfs:label "Unit-testing 2 Veronica" ;
+.
+uni:VM-server
+  rdf:type rdfs:Class ;
+  rdfs:subClassOf uni:Server ;
+.
+uni:VM-server_1
+  rdf:type uni:VM-server ;
+  uni:serverName "Admincontrol-VM-1" ;
+  rdfs:label "VM-server 1" ;
+.
+uni:VM-server_2
+  rdf:type uni:VM-server ;
+  uni:serverName "Admincontrol-VM-2" ;
+  rdfs:label "VM-server 2" ;
+.
+uni:Web
+  rdf:type rdfs:Class ;
+  rdfs:subClassOf uni:Developer ;
+.
+uni:Web_1
+  rdf:type uni:Web ;
+  uni:age 33 ;
+  uni:firstname "Lazaros" ;
+  uni:lastname "Lazaridis" ;
+  uni:personal-phone 6986325046 ;
+  uni:phone 10112 ;
+  uni:printsIn uni:Laser_1 ;
+  uni:salary "1400E" ;
+  uni:sitsOn uni:Ergonomic_1 ;
+  uni:worksAt uni:BackEnd_1 ;
+  uni:worksIn uni:Windows-laptop_2 ;
+  uni:worksWith uni:Sql_2 ;
+  uni:worrk-phone 1011232 ;
+  uni:yearsOfWork 3 ;
+  rdfs:label "Web 1 Lazaros" ;
+.
+uni:Web_10
+  rdf:type uni:Web ;
+  uni:age 43 ;
+  uni:firstname "Rikard" ;
+  uni:lastname "Smith" ;
+  uni:personal-phone 6946834920 ;
+  uni:phone 10391 ;
+  uni:printsIn uni:Laser_2 ;
+  uni:salary "1600E" ;
+  uni:sitsOn uni:Comfort_1 ;
+  uni:worksAt uni:BackEnd_2 ;
+  uni:worksIn uni:Windows-laptop_1 ;
+  uni:worksWith uni:Sql_2 ;
+  uni:worrk-phone 1039158 ;
+  uni:yearsOfWork 5 ;
+  rdfs:label "Web 10 Rikard" ;
+.
+uni:Web_11
+  rdf:type uni:Web ;
+  uni:age 38 ;
+  uni:firstname "Stefanos" ;
+  uni:lastname "Bouros" ;
+  uni:personal-phone 6940542934 ;
+  uni:phone 10969 ;
+  uni:printsIn uni:Laser_2 ;
+  uni:salary "1450E" ;
+  uni:sitsOn uni:Comfort_2 ;
+  uni:worksAt uni:BackEnd_3 ;
+  uni:worksIn uni:Windows-laptop_2 ;
+  uni:worksWith uni:Sql_3 ;
+  uni:worrk-phone 1096989 ;
+  uni:yearsOfWork 4 ;
+  rdfs:label "Web 11 Stefanos" ;
+.
+uni:Web_12
+  rdf:type uni:Web ;
+  uni:age 29 ;
+  uni:firstname "Stathis" ;
+  uni:lastname "Karipidis" ;
+  uni:personal-phone 6945603017 ;
+  uni:phone 10964 ;
+  uni:printsIn uni:Laser_1 ;
+  uni:salary "1350E" ;
+  uni:sitsOn uni:Anatomic_1 ;
+  uni:worksAt uni:FrontEnd_1 ;
+  uni:worksIn uni:Windows-laptop_2 ;
+  uni:worksWith uni:Html_2 ;
+  uni:worrk-phone 1096430 ;
+  uni:yearsOfWork 4 ;
+  rdfs:label "Web 12 Stathis" ;
+.
+uni:Web_13
+  rdf:type uni:Web ;
+  uni:age 27 ;
+  uni:firstname "Xristina" ;
+  uni:lastname "Atsikidou" ;
+  uni:personal-phone 6940546950 ;
+  uni:phone 10999 ;
+  uni:printsIn uni:Laser_2 ;
+  uni:salary "1500E" ;
+  uni:sitsOn uni:Gaming_2 ;
+  uni:worksAt uni:FrontEnd_2 ;
+  uni:worksIn uni:Windows-laptop_1 ;
+  uni:worksWith uni:Html_1 ;
+  uni:worrk-phone 1099985 ;
+  uni:yearsOfWork 5 ;
+  rdfs:label "Web 13 Xristina" ;
+.
+uni:Web_14
+  rdf:type uni:Web ;
+  uni:age 46 ;
+  uni:firstname "Aris" ;
+  uni:lastname "Tremmas" ;
+  uni:personal-phone 6945155898 ;
+  uni:phone 10777 ;
+  uni:printsIn uni:Laser_1 ;
+  uni:salary "1250E" ;
+  uni:sitsOn uni:Ergonomic_1 ;
+  uni:worksAt uni:FrontEnd_2 ;
+  uni:worksIn uni:Windows-laptop_2 ;
+  uni:worksWith uni:Html_2 ;
+  uni:worrk-phone 1077780 ;
+  uni:yearsOfWork 2 ;
+  rdfs:label "Web 14 Aris" ;
+.
+uni:Web_15
+  rdf:type uni:Web ;
+  uni:age 27 ;
+  uni:firstname "George" ;
+  uni:lastname "Papaterpos" ;
+  uni:personal-phone 6948603505 ;
+  uni:phone 10366 ;
+  uni:printsIn uni:Laser_1 ;
+  uni:salary "1400E" ;
+  uni:sitsOn uni:Comfort_1 ;
+  uni:worksAt uni:Fullstack_1 ;
+  uni:worksIn uni:Windows-laptop_1 ;
+  uni:worksWith uni:Csharp_1 ;
+  uni:worksWith uni:Html_1 ;
+  uni:worksWith uni:Javascript_1 ;
+  uni:worrk-phone 1036655 ;
+  uni:yearsOfWork 5 ;
+  rdfs:label "Web 15 George" ;
+.
+uni:Web_2
+  rdf:type uni:Web ;
+  uni:age 34 ;
+  uni:firstname "Nikiforos" ;
+  uni:lastname "Stathakis" ;
+  uni:personal-phone 6986523415 ;
+  uni:phone 10336 ;
+  uni:printsIn uni:Laser_2 ;
+  uni:salary "1450E" ;
+  uni:sitsOn uni:Anatomic_1 ;
+  uni:worksAt uni:Fullstack_2 ;
+  uni:worksIn uni:Windows-laptop_1 ;
+  uni:worksWith uni:Csharp_3 ;
+  uni:worksWith uni:Html_1 ;
+  uni:worksWith uni:Javascript_2 ;
+  uni:worksWith uni:Sql_1 ;
+  uni:worrk-phone 1033665 ;
+  uni:yearsOfWork 4 ;
+  rdfs:label "Web 2 Nikiforos" ;
+.
+uni:Web_3
+  rdf:type uni:Web ;
+  uni:age 26 ;
+  uni:firstname "Marios" ;
+  uni:lastname "Akrivopoulos" ;
+  uni:personal-phone 6943658920 ;
+  uni:phone 10669 ;
+  uni:printsIn uni:Laser_1 ;
+  uni:salary "1500E" ;
+  uni:sitsOn uni:Comfort_1 ;
+  uni:worksAt uni:Fullstack_2 ;
+  uni:worksIn uni:Windows-laptop_1 ;
+  uni:worksWith uni:Csharp_2 ;
+  uni:worksWith uni:Html_2 ;
+  uni:worksWith uni:Javascript_2 ;
+  uni:worksWith uni:Sql_3 ;
+  uni:worrk-phone 1066998 ;
+  uni:yearsOfWork 5 ;
+  rdfs:label "Web 3 Marios" ;
+.
+uni:Web_4
+  rdf:type uni:Web ;
+  uni:age 27 ;
+  uni:firstname "Manolis" ;
+  uni:lastname "Karafotakis" ;
+  uni:personal-phone 6932159638 ;
+  uni:phone 10444 ;
+  uni:printsIn uni:Laser_1 ;
+  uni:salary "1300E" ;
+  uni:sitsOn uni:Comfort_1 ;
+  uni:worksAt uni:Fullstack_1 ;
+  uni:worksIn uni:Windows-laptop_1 ;
+  uni:worksWith uni:Csharp_3 ;
+  uni:worksWith uni:Html_2 ;
+  uni:worksWith uni:Javascript_1 ;
+  uni:worrk-phone 1044462 ;
+  uni:yearsOfWork 3 ;
+  rdfs:label "Web 4 Manolis" ;
+.
+uni:Web_5
+  rdf:type uni:Web ;
+  uni:age 34 ;
+  uni:firstname "Sotiris" ;
+  uni:lastname "Sotiriou" ;
+  uni:personal-phone 6982546310 ;
+  uni:phone 10563 ;
+  uni:printsIn uni:Laser_1 ;
+  uni:salary "1250E" ;
+  uni:sitsOn uni:Comfort_2 ;
+  uni:worksAt uni:BackEnd_3 ;
+  uni:worksIn uni:Windows-laptop_2 ;
+  uni:worksWith uni:Sql_3 ;
+  uni:worrk-phone 1056323 ;
+  uni:yearsOfWork 2 ;
+  rdfs:label "Web 5 Sotiris" ;
+.
+uni:Web_6
+  rdf:type uni:Web ;
+  uni:age 29 ;
+  uni:firstname "Anastasia" ;
+  uni:lastname "Gerokosta" ;
+  uni:personal-phone 6948623057 ;
+  uni:phone 10225 ;
+  uni:printsIn uni:Laser_2 ;
+  uni:salary "1400E" ;
+  uni:sitsOn uni:Anatomic_1 ;
+  uni:worksAt uni:BackEnd_2 ;
+  uni:worksIn uni:Windows-laptop_1 ;
+  uni:worksWith uni:Sql_2 ;
+  uni:worrk-phone 1022543 ;
+  uni:yearsOfWork 4 ;
+  rdfs:label "Web 6 Anastasia" ;
+.
+uni:Web_7
+  rdf:type uni:Web ;
+  uni:age 36 ;
+  uni:firstname "Vaggelis" ;
+  uni:lastname "Tsalis" ;
+  uni:personal-phone 6978521360 ;
+  uni:phone 10896 ;
+  uni:printsIn uni:Laser_1 ;
+  uni:salary "1350E" ;
+  uni:sitsOn uni:Ergonomic_1 ;
+  uni:worksAt uni:FrontEnd_2 ;
+  uni:worksIn uni:Windows-laptop_1 ;
+  uni:worksWith uni:Html_2 ;
+  uni:worrk-phone 1089645 ;
+  uni:yearsOfWork 4 ;
+  rdfs:label "Web 7 Vaggelis" ;
+.
+uni:Web_8
+  rdf:type uni:Web ;
+  uni:age 32 ;
+  uni:firstname "Markos" ;
+  uni:lastname "Seretis" ;
+  uni:personal-phone 6978965230 ;
+  uni:phone 10665 ;
+  uni:printsIn uni:Laser_2 ;
+  uni:salary "1450E" ;
+  uni:sitsOn uni:Gaming_1 ;
+  uni:worksAt uni:BackEnd_2 ;
+  uni:worksIn uni:Windows-laptop_2 ;
+  uni:worksWith uni:Sql_1 ;
+  uni:worrk-phone 1066596 ;
+  uni:yearsOfWork 5 ;
+  rdfs:label "Web 8 Markos" ;
+.
+uni:Web_9
+  rdf:type uni:Web ;
+  uni:age 28 ;
+  uni:firstname "Aggelos" ;
+  uni:lastname "Konstantinou" ;
+  uni:personal-phone 6948623059 ;
+  uni:phone 10223 ;
+  uni:printsIn uni:Laser_2 ;
+  uni:salary "1350E" ;
+  uni:sitsOn uni:Ergonomic_1 ;
+  uni:worksAt uni:Fullstack_1 ;
+  uni:worksIn uni:Windows-laptop_1 ;
+  uni:worksWith uni:Csharp_3 ;
+  uni:worksWith uni:Html_2 ;
+  uni:worksWith uni:Javascript_2 ;
+  uni:worksWith uni:Sql_1 ;
+  uni:worrk-phone 1022369 ;
+  uni:yearsOfWork 4 ;
+  rdfs:label "Web 9 Aggelos" ;
+.
+uni:Windows
+  rdf:type rdfs:Class ;
+  rdfs:subClassOf uni:Mobile ;
+.
+uni:Windows-laptop
+  rdf:type rdfs:Class ;
+  rdfs:subClassOf uni:Laptop ;
+.
+uni:Windows-laptop_1
+  rdf:type uni:Windows-laptop ;
+  uni:cores 8 ;
+  uni:nameBrand "Asus" ;
+  uni:osVersion "10.02" ;
+  uni:ram 16 ;
+  uni:rom 512 ;
+  rdfs:label "Windows-laptop 1 Asus" ;
+.
+uni:Windows-laptop_2
+  rdf:type uni:Windows-laptop ;
+  uni:cores 8 ;
+  uni:nameBrand "DELL" ;
+  uni:osVersion "10.04" ;
+  uni:ram 32 ;
+  uni:rom 512 ;
+  rdfs:label "Windows-laptop 2 DELL" ;
+.
+uni:Windows_1
+  rdf:type uni:Windows ;
+  uni:age 32 ;
+  uni:firstname "Sakis" ;
+  uni:lastname "Arsenakis" ;
+  uni:personal-phone 6940543210 ;
+  uni:phone 10125 ;
+  uni:printsIn uni:Laser_2 ;
+  uni:salary "1400E" ;
+  uni:sitsOn uni:Comfort_2 ;
+  uni:version 11 ;
+  uni:worksAt uni:FrontEnd_1 ;
+  uni:worksIn uni:Windows-laptop_2 ;
+  uni:worksWith uni:Html_1 ;
+  uni:worksWith uni:Javascript_2 ;
+  uni:worrk-phone 1012526 ;
+  uni:yearsOfWork 4 ;
+  rdfs:label "Windows 1 Sakis" ;
+.
+uni:Windows_2
+  rdf:type uni:Windows ;
+  uni:age 28 ;
+  uni:firstname "Christina" ;
+  uni:lastname "markidou" ;
+  uni:personal-phone 6920364560 ;
+  uni:phone 10354 ;
+  uni:printsIn uni:Laser_2 ;
+  uni:salary "1350E" ;
+  uni:sitsOn uni:Ergonomic_1 ;
+  uni:version 10 ;
+  uni:worksAt uni:BackEnd_1 ;
+  uni:worksIn uni:Windows-laptop_2 ;
+  uni:worksWith uni:Sql_1 ;
+  uni:worrk-phone 1035456 ;
+  uni:yearsOfWork 4 ;
+  rdfs:label "Windows 2 Christina" ;
+.
+uni:Windows_3
+  rdf:type uni:Windows ;
+  uni:age 26 ;
+  uni:firstname "Olina" ;
+  uni:lastname "Kapetaniou" ;
+  uni:personal-phone 6952310566 ;
+  uni:phone 10488 ;
+  uni:printsIn uni:Laser_1 ;
+  uni:salary "1450E" ;
+  uni:sitsOn uni:Ergonomic_1 ;
+  uni:version 11 ;
+  uni:worksAt uni:BackEnd_1 ;
+  uni:worksIn uni:Windows-laptop_2 ;
+  uni:worksWith uni:Sql_2 ;
+  uni:worrk-phone 1048877 ;
+  uni:yearsOfWork 3 ;
+  rdfs:label "Windows 3 Olina" ;
+.
+uni:Windows_4
+  rdf:type uni:Windows ;
+  uni:age 29 ;
+  uni:firstname "Tasos" ;
+  uni:lastname "Katsaras" ;
+  uni:personal-phone 6940563021 ;
+  uni:phone 10898 ;
+  uni:printsIn uni:Laser_2 ;
+  uni:salary "1300E" ;
+  uni:sitsOn uni:Comfort_1 ;
+  uni:version 10 ;
+  uni:worksAt uni:Fullstack_1 ;
+  uni:worksIn uni:Windows-laptop_1 ;
+  uni:worksWith uni:Csharp_1 ;
+  uni:worksWith uni:Html_2 ;
+  uni:worksWith uni:Javascript_2 ;
+  uni:worrk-phone 1089879 ;
+  uni:yearsOfWork 3 ;
+  rdfs:label "Windows 4 Tasos" ;
+.
+uni:Windows_5
+  rdf:type uni:Windows ;
+  uni:age 35 ;
+  uni:firstname "Eleni" ;
+  uni:lastname "Malliopoulou" ;
+  uni:personal-phone 6953201653 ;
+  uni:phone 10422 ;
+  uni:printsIn uni:Laser_2 ;
+  uni:salary "1450E" ;
+  uni:sitsOn uni:Comfort_1 ;
+  uni:version 11 ;
+  uni:worksAt uni:BackEnd_3 ;
+  uni:worksIn uni:Windows-laptop_2 ;
+  uni:worksWith uni:Sql_3 ;
+  uni:worrk-phone 1042223 ;
+  uni:yearsOfWork 4 ;
+  rdfs:label "Windows 5 Eleni" ;
+.
+uni:age
+  rdf:type rdf:Property ;
+  rdfs:domain uni:Emloyee ;
+  rdfs:range xsd:integer ;
+.
+uni:amount
+  rdf:type rdf:Property ;
+  rdfs:domain uni:Desk ;
+  rdfs:range xsd:integer ;
+.
+uni:chairID
+  rdf:type rdf:Property ;
+  rdfs:domain uni:Chair ;
+  rdfs:range xsd:integer ;
+.
+uni:colors
+  rdf:type rdf:Property ;
+  rdfs:domain uni:Printer ;
+  rdfs:range xsd:boolean ;
+.
+uni:cores
+  rdf:type rdf:Property ;
+  rdfs:domain uni:Laptop ;
+  rdfs:range xsd:integer ;
+.
+uni:customerLocation
+  rdf:type rdf:Property ;
+  rdfs:domain uni:Sales ;
+  rdfs:label "customer location" ;
+  rdfs:range xsd:string ;
+.
+uni:firstname
+  rdf:type rdf:Property ;
+  rdfs:domain uni:Emloyee ;
+  rdfs:range xsd:string ;
+.
+uni:inches
+  rdf:type rdf:Property ;
+  rdfs:domain uni:Monitor ;
+  rdfs:range xsd:integer ;
+.
+uni:isKnownPerfectBy
+  rdf:type rdf:Property ;
+  rdfs:domain uni:Programming ;
+  rdfs:range uni:Developer ;
+  rdfs:range uni:Tech ;
+.
+uni:isUsedBy
+  rdf:type rdf:Property ;
+  rdfs:domain uni:Curve ;
+  rdfs:range uni:Team-leader ;
+  rdfs:range uni:Web ;
+.
+uni:isWrittenBy
+  rdf:type rdf:Property ;
+  rdfs:domain uni:Database-server ;
+  rdfs:label "is written by" ;
+  rdfs:range uni:Sql ;
+.
+uni:languageVersion
+  rdf:type rdf:Property ;
+  rdfs:domain uni:Language ;
+  rdfs:range xsd:integer ;
+.
+uni:lastname
+  rdf:type rdf:Property ;
+  rdfs:domain uni:Emloyee ;
+  rdfs:range xsd:string ;
+.
+uni:leads
+  rdf:type rdf:Property ;
+  rdfs:domain uni:Team-leader ;
+  rdfs:range uni:Programming-team ;
+.
+uni:nameBrand
+  rdf:type rdf:Property ;
+  rdfs:domain uni:Laptop ;
+  rdfs:range xsd:string ;
+.
+uni:number
+  rdf:type rdf:Property ;
+  rdfs:range xsd:integer ;
+.
+uni:numberOfEmployees
+  rdf:type rdf:Property ;
+  rdfs:domain uni:CompanyTeam ;
+  rdfs:range xsd:integer ;
+.
+uni:osVersion
+  rdf:type rdf:Property ;
+  rdfs:domain uni:Laptop ;
+  rdfs:range xsd:string ;
+.
+uni:personal-phone
+  rdf:type rdf:Property ;
+  rdfs:domain uni:Emloyee ;
+  rdfs:range xsd:integer ;
+  rdfs:subPropertyOf uni:phone ;
+.
+uni:phone
+  rdf:type rdf:Property ;
+  rdfs:domain uni:Emloyee ;
+  rdfs:range xsd:integer ;
+.
+uni:printsIn
+  rdf:type rdf:Property ;
+  rdfs:domain uni:Emloyee ;
+  rdfs:range uni:Printer ;
+.
+uni:ram
+  rdf:type rdf:Property ;
+  rdfs:domain uni:Laptop ;
+  rdfs:range xsd:integer ;
+.
+uni:rom
+  rdf:type rdf:Property ;
+  rdfs:domain uni:Laptop ;
+  rdfs:range xsd:integer ;
+.
+uni:salary
+  rdf:type rdf:Property ;
+  rdfs:domain uni:Emloyee ;
+  rdfs:range xsd:string ;
+.
+uni:serverName
+  rdf:type rdf:Property ;
+  rdfs:domain uni:Server ;
+  rdfs:range xsd:string ;
+.
+uni:sitsOn
+  rdf:type rdf:Property ;
+  rdfs:domain uni:Emloyee ;
+  rdfs:range uni:Chair ;
+.
+uni:title
+  rdf:type rdf:Property ;
+  rdfs:domain uni:CompanyTeam ;
+  rdfs:range xsd:string ;
+.
+uni:uses
+  rdf:type rdf:Property ;
+  rdfs:domain uni:QA ;
+  rdfs:range uni:Testing ;
+.
+uni:version
+  rdf:type rdf:Property ;
+  rdfs:domain uni:Mobile ;
+  rdfs:range xsd:integer ;
+.
+uni:watts
+  rdf:type rdf:Property ;
+  rdfs:domain uni:Printer ;
+  rdfs:range xsd:integer ;
+.
+uni:worksAt
+  rdf:type rdf:Property ;
+  rdfs:domain uni:Emloyee ;
+  rdfs:range uni:CompanyTeam ;
+.
+uni:worksIn
+  rdf:type rdf:Property ;
+  rdfs:domain uni:Developer ;
+  rdfs:range uni:Linux ;
+  rdfs:range uni:Windows-laptop ;
+.
+uni:worksOnlyIn
+  rdf:type rdf:Property ;
+  rdfs:domain uni:QA ;
+  rdfs:range uni:MacOs ;
+.
+uni:worksWith
+  rdf:type rdf:Property ;
+  rdfs:domain uni:Developer ;
+  rdfs:range uni:Programming ;
+.
+uni:worrk-phone
+  rdf:type rdf:Property ;
+  rdfs:domain uni:Emloyee ;
+  rdfs:range xsd:integer ;
+  rdfs:subPropertyOf uni:phone ;
+.
+uni:yearsOfWork
+  rdf:type rdf:Property ;
+  rdfs:domain uni:Emloyee ;
+  rdfs:range xsd:integer ;
+.

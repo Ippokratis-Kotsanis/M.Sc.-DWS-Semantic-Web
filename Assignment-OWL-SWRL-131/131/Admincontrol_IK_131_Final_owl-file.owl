@@ -1,0 +1,2702 @@
+<?xml version="1.0"?>
+<rdf:RDF
+    xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+    xmlns:protege="http://protege.stanford.edu/plugins/owl/protege#"
+    xmlns:spin="http://spinrdf.org/spin#"
+    xmlns:xsp="http://www.owl-ontologies.com/2005/08/07/xsp.owl#"
+    xmlns:owl="http://www.w3.org/2002/07/owl#"
+    xmlns:uni="http://example.org/admincontrol#"
+    xmlns:sqwrl="http://sqwrl.stanford.edu/ontologies/built-ins/3.4/sqwrl.owl#"
+    xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+    xmlns:swrl="http://www.w3.org/2003/11/swrl#"
+    xmlns:swrlb="http://www.w3.org/2003/11/swrlb#"
+    xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+    xmlns:swrla="http://swrl.stanford.edu/ontologies/3.3/swrla.owl#"
+  xml:base="http://example.org/admincontrol">
+  <owl:Ontology rdf:about="">
+    <spin:imports rdf:resource="http://topbraid.org/spin/rdfsplus"/>
+    <owl:imports rdf:resource="http://sqwrl.stanford.edu/ontologies/built-ins/3.4/sqwrl.owl"/>
+    <owl:imports rdf:resource="http://swrl.stanford.edu/ontologies/3.3/swrla.owl"/>
+    <owl:versionInfo rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Created with TopBraid Composer</owl:versionInfo>
+  </owl:Ontology>
+  <owl:Class rdf:ID="Printer">
+    <rdfs:subClassOf>
+      <owl:Class rdf:ID="Equipment"/>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:ID="Language">
+    <rdfs:subClassOf>
+      <owl:Class rdf:ID="Software"/>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:ID="Monitor">
+    <rdfs:subClassOf>
+      <owl:Class rdf:ID="Desk"/>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:ID="Ergonomic">
+    <rdfs:subClassOf>
+      <owl:Class rdf:ID="Chair"/>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:about="#Equipment">
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="http://www.w3.org/2000/01/rdf-schema#Resource"/>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:ID="Leap-work-tests">
+    <rdfs:subClassOf>
+      <owl:Class rdf:ID="Testing"/>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:ID="CompanyTool">
+    <rdfs:subClassOf rdf:resource="http://www.w3.org/2000/01/rdf-schema#Resource"/>
+  </owl:Class>
+  <owl:Class rdf:ID="Anatomic">
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="#Chair"/>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:ID="Tech">
+    <rdfs:subClassOf>
+      <owl:Class rdf:ID="Team-leader"/>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:ID="Server">
+    <rdfs:subClassOf rdf:resource="#CompanyTool"/>
+  </owl:Class>
+  <owl:Class rdf:ID="Local-sales">
+    <rdfs:subClassOf>
+      <owl:Class rdf:ID="Sales"/>
+    </rdfs:subClassOf>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Local-sales</rdfs:label>
+  </owl:Class>
+  <owl:Class rdf:ID="Business-manager">
+    <owl:equivalentClass>
+      <owl:Restriction>
+        <owl:someValuesFrom>
+          <owl:Class rdf:ID="HR"/>
+        </owl:someValuesFrom>
+        <owl:onProperty>
+          <owl:FunctionalProperty rdf:ID="worksAt"/>
+        </owl:onProperty>
+      </owl:Restriction>
+    </owl:equivalentClass>
+    <rdfs:subClassOf>
+      <owl:Class rdf:ID="Emloyee"/>
+    </rdfs:subClassOf>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Business-manager</rdfs:label>
+  </owl:Class>
+  <owl:Class rdf:about="#HR">
+    <rdfs:subClassOf>
+      <owl:Class rdf:ID="CompanyTeam"/>
+    </rdfs:subClassOf>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Hr-team</rdfs:label>
+  </owl:Class>
+  <owl:Class rdf:ID="Game">
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:onProperty>
+          <owl:ObjectProperty rdf:ID="sitsOn"/>
+        </owl:onProperty>
+        <owl:allValuesFrom>
+          <owl:Class rdf:ID="Gaming"/>
+        </owl:allValuesFrom>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Class rdf:ID="Developer"/>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:ID="ThreeD">
+    <rdfs:subClassOf rdf:resource="#Printer"/>
+  </owl:Class>
+  <owl:Class rdf:ID="Mobile">
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="#Developer"/>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:ID="Standard">
+    <rdfs:subClassOf rdf:resource="#Monitor"/>
+  </owl:Class>
+  <owl:Class rdf:ID="Sql">
+    <rdfs:subClassOf>
+      <owl:Class rdf:ID="Programming"/>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:ID="LargeTeam">
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="#CompanyTeam"/>
+    </rdfs:subClassOf>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Large team</rdfs:label>
+  </owl:Class>
+  <owl:Class rdf:ID="Database-server">
+    <rdfs:subClassOf rdf:resource="#Server"/>
+    <owl:equivalentClass>
+      <owl:Restriction>
+        <owl:onProperty>
+          <owl:ObjectProperty rdf:ID="isWrittenBy"/>
+        </owl:onProperty>
+        <owl:someValuesFrom rdf:resource="#Sql"/>
+      </owl:Restriction>
+    </owl:equivalentClass>
+  </owl:Class>
+  <owl:Class rdf:ID="Csharp">
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="#Programming"/>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:ID="Laptop">
+    <rdfs:subClassOf rdf:resource="#Equipment"/>
+  </owl:Class>
+  <owl:Class rdf:ID="Manager">
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:allValuesFrom>
+          <owl:Class rdf:ID="Laser"/>
+        </owl:allValuesFrom>
+        <owl:onProperty>
+          <owl:ObjectProperty rdf:ID="printsIn"/>
+        </owl:onProperty>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="#Team-leader"/>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:ID="BackEnd">
+    <rdfs:subClassOf>
+      <owl:Class rdf:ID="Programming-team"/>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:ID="VM-server">
+    <rdfs:subClassOf rdf:resource="#Server"/>
+  </owl:Class>
+  <owl:Class rdf:ID="FrontEnd">
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="#Programming-team"/>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:ID="Application-server">
+    <rdfs:subClassOf rdf:resource="#Server"/>
+  </owl:Class>
+  <owl:Class rdf:about="#Developer">
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="#Emloyee"/>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:about="#Chair">
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="#Desk"/>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:about="#Programming-team">
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="#CompanyTeam"/>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:about="#Testing">
+    <rdfs:subClassOf rdf:resource="#Language"/>
+    <owl:disjointWith>
+      <owl:Class rdf:about="#Programming"/>
+    </owl:disjointWith>
+  </owl:Class>
+  <owl:Class rdf:ID="Curve">
+    <rdfs:subClassOf rdf:resource="#Monitor"/>
+  </owl:Class>
+  <owl:Class rdf:about="#Team-leader">
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:allValuesFrom rdf:resource="#Programming-team"/>
+        <owl:onProperty>
+          <owl:ObjectProperty rdf:ID="leads"/>
+        </owl:onProperty>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="#Emloyee"/>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:ID="Windows">
+    <rdfs:subClassOf rdf:resource="#Mobile"/>
+  </owl:Class>
+  <owl:Class rdf:ID="IOS">
+    <rdfs:subClassOf rdf:resource="#Mobile"/>
+  </owl:Class>
+  <owl:Class rdf:about="#Sales">
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Sales-team</rdfs:label>
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="#CompanyTeam"/>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:ID="Android">
+    <rdfs:subClassOf rdf:resource="#Mobile"/>
+  </owl:Class>
+  <owl:Class rdf:about="#Laser">
+    <rdfs:subClassOf rdf:resource="#Printer"/>
+  </owl:Class>
+  <owl:Class rdf:ID="Javascript">
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="#Programming"/>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:ID="Economist">
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Economist</rdfs:label>
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="#Emloyee"/>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:ID="Abroad-sales">
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Abroad-sales</rdfs:label>
+    <rdfs:subClassOf rdf:resource="#Sales"/>
+  </owl:Class>
+  <owl:Class rdf:ID="Game3d">
+    <rdfs:subClassOf rdf:resource="#Game"/>
+  </owl:Class>
+  <owl:Class rdf:about="#Emloyee">
+    <rdfs:subClassOf rdf:resource="http://www.w3.org/2000/01/rdf-schema#Resource"/>
+  </owl:Class>
+  <owl:Class rdf:ID="Game2d">
+    <rdfs:subClassOf rdf:resource="#Game"/>
+  </owl:Class>
+  <owl:Class rdf:ID="highProfessional">
+    <rdfs:subClassOf rdf:resource="#Emloyee"/>
+  </owl:Class>
+  <owl:Class rdf:ID="Component-testing">
+    <rdfs:subClassOf>
+      <owl:Class rdf:ID="QA"/>
+    </rdfs:subClassOf>
+    <owl:equivalentClass>
+      <owl:Restriction>
+        <owl:onProperty>
+          <owl:TransitiveProperty rdf:ID="uses"/>
+        </owl:onProperty>
+        <owl:someValuesFrom rdf:resource="#Leap-work-tests"/>
+      </owl:Restriction>
+    </owl:equivalentClass>
+  </owl:Class>
+  <owl:Class rdf:about="#QA">
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:allValuesFrom rdf:resource="#Programming-team"/>
+        <owl:onProperty>
+          <owl:FunctionalProperty rdf:about="#worksAt"/>
+        </owl:onProperty>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf rdf:resource="#Emloyee"/>
+  </owl:Class>
+  <owl:Class rdf:ID="Web">
+    <rdfs:subClassOf rdf:resource="#Developer"/>
+  </owl:Class>
+  <owl:Class rdf:ID="Performance-testing">
+    <rdfs:subClassOf rdf:resource="#QA"/>
+  </owl:Class>
+  <owl:Class rdf:about="#Desk">
+    <rdfs:subClassOf rdf:resource="#Equipment"/>
+  </owl:Class>
+  <owl:Class rdf:about="#Gaming">
+    <rdfs:subClassOf rdf:resource="#Chair"/>
+  </owl:Class>
+  <owl:Class rdf:about="#Software">
+    <rdfs:subClassOf rdf:resource="#CompanyTool"/>
+  </owl:Class>
+  <owl:Class rdf:ID="Unit-testing">
+    <rdfs:subClassOf rdf:resource="#QA"/>
+  </owl:Class>
+  <owl:Class rdf:ID="Html">
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="#Programming"/>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:ID="Fullstack">
+    <rdfs:subClassOf rdf:resource="#Programming-team"/>
+  </owl:Class>
+  <owl:Class rdf:about="#CompanyTeam">
+    <rdfs:subClassOf rdf:resource="http://www.w3.org/2000/01/rdf-schema#Resource"/>
+  </owl:Class>
+  <owl:Class rdf:ID="Integration-testing">
+    <owl:equivalentClass>
+      <owl:Restriction>
+        <owl:someValuesFrom rdf:resource="#Leap-work-tests"/>
+        <owl:onProperty>
+          <owl:TransitiveProperty rdf:about="#uses"/>
+        </owl:onProperty>
+      </owl:Restriction>
+    </owl:equivalentClass>
+    <rdfs:subClassOf rdf:resource="#QA"/>
+  </owl:Class>
+  <owl:Class rdf:ID="Comfort">
+    <rdfs:subClassOf rdf:resource="#Chair"/>
+  </owl:Class>
+  <owl:Class rdf:ID="Mail-server">
+    <rdfs:subClassOf rdf:resource="#Server"/>
+  </owl:Class>
+  <owl:Class rdf:ID="Selenium">
+    <rdfs:subClassOf rdf:resource="#Testing"/>
+  </owl:Class>
+  <owl:Class rdf:about="#Programming">
+    <rdfs:subClassOf rdf:resource="#Language"/>
+    <owl:disjointWith rdf:resource="#Testing"/>
+  </owl:Class>
+  <owl:ObjectProperty rdf:ID="worksWith">
+    <rdfs:range rdf:resource="#Programming"/>
+    <rdfs:domain rdf:resource="#Developer"/>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:ID="isUsedBy">
+    <rdfs:domain rdf:resource="#Curve"/>
+    <rdfs:range rdf:resource="#Web"/>
+    <rdfs:range rdf:resource="#Team-leader"/>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:about="#printsIn">
+    <owl:inverseOf>
+      <owl:ObjectProperty rdf:ID="isUsedForPrintBy"/>
+    </owl:inverseOf>
+    <rdfs:domain rdf:resource="#Emloyee"/>
+    <rdfs:range rdf:resource="#Printer"/>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:about="#isWrittenBy">
+    <rdfs:domain rdf:resource="#Server"/>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >is written by</rdfs:label>
+    <rdfs:range rdf:resource="#Sql"/>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:about="#leads">
+    <rdfs:range rdf:resource="#Programming-team"/>
+    <rdfs:domain rdf:resource="#Team-leader"/>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:ID="isKnownPerfectBy">
+    <rdfs:domain rdf:resource="#Programming"/>
+    <rdfs:range rdf:resource="#Tech"/>
+    <rdfs:range rdf:resource="#Developer"/>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:about="#sitsOn">
+    <owl:inverseOf>
+      <owl:ObjectProperty rdf:ID="isSitBy"/>
+    </owl:inverseOf>
+    <rdfs:domain rdf:resource="#Emloyee"/>
+    <rdfs:range rdf:resource="#Chair"/>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:about="#isUsedForPrintBy">
+    <rdfs:range rdf:resource="#Emloyee"/>
+    <rdfs:domain rdf:resource="#Printer"/>
+    <owl:inverseOf rdf:resource="#printsIn"/>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:about="#isSitBy">
+    <owl:inverseOf rdf:resource="#sitsOn"/>
+    <rdfs:range rdf:resource="#Emloyee"/>
+    <rdfs:domain rdf:resource="#Chair"/>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:ID="isLeadBy">
+    <rdfs:domain rdf:resource="#Emloyee"/>
+    <rdfs:range rdf:resource="#Team-leader"/>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >is lead by</rdfs:label>
+  </owl:ObjectProperty>
+  <owl:DatatypeProperty rdf:ID="title">
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    <rdfs:domain rdf:resource="#CompanyTeam"/>
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:ID="numberOfEmployees">
+    <rdfs:domain rdf:resource="#CompanyTeam"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:ID="ram">
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
+    <rdfs:domain rdf:resource="#Laptop"/>
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:ID="nameBrand">
+    <rdfs:domain rdf:resource="#Laptop"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:ID="languageVersion">
+    <rdfs:domain rdf:resource="#Language"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:ID="cores">
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
+    <rdfs:domain rdf:resource="#Laptop"/>
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:ID="yearsOfWork">
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
+    <rdfs:domain rdf:resource="#Emloyee"/>
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:ID="customerLocation">
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    <rdfs:domain rdf:resource="#Sales"/>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >customer location</rdfs:label>
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:ID="rom">
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
+    <rdfs:domain rdf:resource="#Laptop"/>
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:ID="serverName">
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    <rdfs:domain rdf:resource="#Server"/>
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:ID="colors">
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
+    <rdfs:domain rdf:resource="#Printer"/>
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:ID="inches">
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
+    <rdfs:domain rdf:resource="#Monitor"/>
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:ID="version">
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
+    <rdfs:domain rdf:resource="#Mobile"/>
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:ID="salary">
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    <rdfs:domain rdf:resource="#Emloyee"/>
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:ID="osVersion">
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    <rdfs:domain rdf:resource="#Laptop"/>
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:ID="number">
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:ID="amount">
+    <rdfs:domain rdf:resource="#Desk"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:ID="hasOs">
+    <rdfs:domain rdf:resource="#Laptop"/>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >has os</rdfs:label>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:ID="age">
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
+    <rdfs:domain rdf:resource="#Emloyee"/>
+  </owl:DatatypeProperty>
+  <owl:TransitiveProperty rdf:about="#uses">
+    <rdfs:range rdf:resource="#Testing"/>
+    <rdfs:domain rdf:resource="#QA"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+  </owl:TransitiveProperty>
+  <owl:FunctionalProperty rdf:ID="firstname">
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+    <rdfs:domain rdf:resource="#Emloyee"/>
+  </owl:FunctionalProperty>
+  <owl:FunctionalProperty rdf:ID="chairID">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+    <rdfs:domain rdf:resource="#Chair"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
+  </owl:FunctionalProperty>
+  <owl:FunctionalProperty rdf:about="#worksAt">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+    <rdfs:domain rdf:resource="#Emloyee"/>
+    <rdfs:range rdf:resource="#CompanyTeam"/>
+  </owl:FunctionalProperty>
+  <owl:FunctionalProperty rdf:ID="lastname">
+    <rdfs:domain rdf:resource="#Emloyee"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+  </owl:FunctionalProperty>
+  <owl:FunctionalProperty rdf:ID="watts">
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
+    <rdfs:domain rdf:resource="#Printer"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+  </owl:FunctionalProperty>
+  <uni:Integration-testing rdf:ID="Integration-testing_2">
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Integration-testing 2 Odisseas</rdfs:label>
+    <uni:printsIn>
+      <owl:NamedIndividual rdf:ID="Laser_1">
+        <uni:isUsedForPrintBy>
+          <uni:QA rdf:ID="QA_1_General">
+            <uni:lastname rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+            >Bo</uni:lastname>
+            <uni:firstname rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+            >Steve</uni:firstname>
+            <uni:worksAt>
+              <owl:NamedIndividual rdf:ID="FrontEnd_1">
+                <uni:title rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+                >Angular</uni:title>
+                <uni:numberOfEmployees rdf:datatype="http://www.w3.org/2001/XMLSchema#integer"
+                >26</uni:numberOfEmployees>
+                <rdf:type rdf:resource="#FrontEnd"/>
+                <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+                >Front end 1 Angular</rdfs:label>
+              </owl:NamedIndividual>
+            </uni:worksAt>
+            <uni:sitsOn>
+              <owl:NamedIndividual rdf:ID="Comfort_1">
+                <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+                >Comfort 1</rdfs:label>
+                <uni:isSitBy rdf:resource="#QA_1_General"/>
+                <uni:amount rdf:datatype="http://www.w3.org/2001/XMLSchema#integer"
+                >30</uni:amount>
+                <uni:chairID rdf:datatype="http://www.w3.org/2001/XMLSchema#integer"
+                >02</uni:chairID>
+                <rdf:type rdf:resource="#Comfort"/>
+              </owl:NamedIndividual>
+            </uni:sitsOn>
+            <uni:salary rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+            >1300E</uni:salary>
+            <uni:printsIn rdf:resource="#Laser_1"/>
+            <uni:yearsOfWork rdf:datatype="http://www.w3.org/2001/XMLSchema#integer"
+            >3</uni:yearsOfWork>
+            <uni:uses>
+              <owl:NamedIndividual rdf:ID="Leap-work-tests_3">
+                <uni:languageVersion rdf:datatype="http://www.w3.org/2001/XMLSchema#integer"
+                >2022</uni:languageVersion>
+                <rdf:type rdf:resource="#Leap-work-tests"/>
+                <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+                >Leap-work-tests 3 2022</rdfs:label>
+              </owl:NamedIndividual>
+            </uni:uses>
+            <uni:age rdf:datatype="http://www.w3.org/2001/XMLSchema#integer"
+            >29</uni:age>
+          </uni:QA>
+        </uni:isUsedForPrintBy>
+        <uni:isUsedForPrintBy>
+          <uni:Emloyee rdf:ID="Emloyee_1_General">
+            <uni:sitsOn>
+              <owl:NamedIndividual rdf:ID="Ergonomic_1">
+                <uni:amount rdf:datatype="http://www.w3.org/2001/XMLSchema#integer"
+                >20</uni:amount>
+                <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+                >Ergonomic 1</rdfs:label>
+                <uni:isSitBy rdf:resource="#Emloyee_1_General"/>
+                <rdf:type rdf:resource="#Ergonomic"/>
+                <uni:chairID rdf:datatype="http://www.w3.org/2001/XMLSchema#integer"
+                >03</uni:chairID>
+              </owl:NamedIndividual>
+            </uni:sitsOn>
+            <uni:printsIn rdf:resource="#Laser_1"/>
+            <uni:worksAt>
+              <owl:NamedIndividual rdf:ID="Hr-team_1">
+                <uni:title rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+                >Talent Seekers &amp; Keepers.</uni:title>
+                <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+                >Hr-team 1 TalentSeekersAndKeepers</rdfs:label>
+                <uni:numberOfEmployees rdf:datatype="http://www.w3.org/2001/XMLSchema#integer"
+                >5</uni:numberOfEmployees>
+                <rdf:type rdf:resource="#HR"/>
+              </owl:NamedIndividual>
+            </uni:worksAt>
+            <uni:lastname rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+            >Christou</uni:lastname>
+            <uni:firstname rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+            >Kostas</uni:firstname>
+            <uni:yearsOfWork rdf:datatype="http://www.w3.org/2001/XMLSchema#integer"
+            >2</uni:yearsOfWork>
+            <uni:salary rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+            >1200E</uni:salary>
+            <uni:age rdf:datatype="http://www.w3.org/2001/XMLSchema#integer"
+            >29</uni:age>
+          </uni:Emloyee>
+        </uni:isUsedForPrintBy>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+        >Laser 1 Colors</rdfs:label>
+        <uni:watts rdf:datatype="http://www.w3.org/2001/XMLSchema#integer"
+        >35</uni:watts>
+        <uni:colors rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean"
+        >true</uni:colors>
+        <rdf:type rdf:resource="#Laser"/>
+      </owl:NamedIndividual>
+    </uni:printsIn>
+    <uni:salary rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >1200E</uni:salary>
+    <uni:sitsOn>
+      <owl:NamedIndividual rdf:ID="Comfort_2">
+        <rdf:type rdf:resource="#Comfort"/>
+        <uni:chairID rdf:datatype="http://www.w3.org/2001/XMLSchema#integer"
+        >021</uni:chairID>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+        >Comfort 2</rdfs:label>
+        <uni:amount rdf:datatype="http://www.w3.org/2001/XMLSchema#integer"
+        >15</uni:amount>
+      </owl:NamedIndividual>
+    </uni:sitsOn>
+    <uni:age rdf:datatype="http://www.w3.org/2001/XMLSchema#integer"
+    >28</uni:age>
+    <uni:firstname rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Odisseas</uni:firstname>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+    <uni:lastname rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Masmanidis</uni:lastname>
+    <uni:uses>
+      <owl:NamedIndividual rdf:ID="Leap-work-tests_2">
+        <rdf:type rdf:resource="#Leap-work-tests"/>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+        >Leap-work-tests 2 2020</rdfs:label>
+        <uni:languageVersion rdf:datatype="http://www.w3.org/2001/XMLSchema#integer"
+        >2020</uni:languageVersion>
+      </owl:NamedIndividual>
+    </uni:uses>
+    <uni:yearsOfWork rdf:datatype="http://www.w3.org/2001/XMLSchema#integer"
+    >1</uni:yearsOfWork>
+    <uni:worksOnlyIn>
+      <owl:NamedIndividual rdf:ID="MacOs_1">
+        <uni:hasOs rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+        >MacOS</uni:hasOs>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+        >Mac os 1 Apple</rdfs:label>
+        <uni:osVersion rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+        >7.0</uni:osVersion>
+        <uni:rom rdf:datatype="http://www.w3.org/2001/XMLSchema#integer"
+        >512</uni:rom>
+        <uni:nameBrand rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+        >Apple</uni:nameBrand>
+        <uni:cores rdf:datatype="http://www.w3.org/2001/XMLSchema#integer"
+        >8</uni:cores>
+        <uni:ram rdf:datatype="http://www.w3.org/2001/XMLSchema#integer"
+        >16</uni:ram>
+        <rdf:type rdf:resource="#Laptop"/>
+      </owl:NamedIndividual>
+    </uni:worksOnlyIn>
+    <uni:worksAt>
+      <owl:NamedIndividual rdf:ID="Fullstack_1">
+        <uni:title rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+        >Platform Cloud</uni:title>
+        <uni:numberOfEmployees rdf:datatype="http://www.w3.org/2001/XMLSchema#integer"
+        >30</uni:numberOfEmployees>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+        >Fullstack 1 PC</rdfs:label>
+        <rdf:type rdf:resource="#Fullstack"/>
+      </owl:NamedIndividual>
+    </uni:worksAt>
+  </uni:Integration-testing>
+  <swrl:Imp rdf:about="Rule-1">
+    <swrl:head>
+      <swrl:AtomList>
+        <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+        <rdf:first>
+          <swrl:ClassAtom>
+            <swrl:classPredicate rdf:resource="#LargeTeam"/>
+            <swrl:argument1>
+              <swrl:Variable rdf:about="x"/>
+            </swrl:argument1>
+          </swrl:ClassAtom>
+        </rdf:first>
+      </swrl:AtomList>
+    </swrl:head>
+    <swrl:body>
+      <swrl:AtomList>
+        <rdf:first>
+          <swrl:ClassAtom>
+            <swrl:classPredicate rdf:resource="#CompanyTeam"/>
+            <swrl:argument1 rdf:resource="x"/>
+          </swrl:ClassAtom>
+        </rdf:first>
+        <rdf:rest>
+          <swrl:AtomList>
+            <rdf:first>
+              <swrl:DatavaluedPropertyAtom>
+                <swrl:propertyPredicate rdf:resource="#numberOfEmployees"/>
+                <swrl:argument2>
+                  <swrl:Variable rdf:about="y"/>
+                </swrl:argument2>
+                <swrl:argument1 rdf:resource="x"/>
+              </swrl:DatavaluedPropertyAtom>
+            </rdf:first>
+            <rdf:rest>
+              <swrl:AtomList>
+                <rdf:first>
+                  <swrl:BuiltinAtom>
+                    <swrl:arguments>
+                      <rdf:List>
+                        <rdf:first rdf:resource="y"/>
+                        <rdf:rest>
+                          <rdf:List>
+                            <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
+                            >28</rdf:first>
+                            <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+                          </rdf:List>
+                        </rdf:rest>
+                      </rdf:List>
+                    </swrl:arguments>
+                    <swrl:builtin rdf:resource="http://www.w3.org/2003/11/swrlb#greaterThan"/>
+                  </swrl:BuiltinAtom>
+                </rdf:first>
+                <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+              </swrl:AtomList>
+            </rdf:rest>
+          </swrl:AtomList>
+        </rdf:rest>
+      </swrl:AtomList>
+    </swrl:body>
+  </swrl:Imp>
+  <owl:NamedIndividual rdf:ID="Tech_2">
+    <uni:yearsOfWork rdf:datatype="http://www.w3.org/2001/XMLSchema#integer"
+    >6</uni:yearsOfWork>
+    <uni:lastname rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Savidou</uni:lastname>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Tech 2 Eva</rdfs:label>
+    <uni:worksAt rdf:resource="#FrontEnd_1"/>
+    <uni:salary rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >1500E</uni:salary>
+    <rdf:type rdf:resource="#Tech"/>
+    <uni:printsIn>
+      <owl:NamedIndividual rdf:ID="ThreeD_1">
+        <rdf:type rdf:resource="#ThreeD"/>
+        <uni:watts rdf:datatype="http://www.w3.org/2001/XMLSchema#integer"
+        >50</uni:watts>
+        <uni:colors rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean"
+        >true</uni:colors>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+        >Three d 1 HP</rdfs:label>
+      </owl:NamedIndividual>
+    </uni:printsIn>
+    <uni:leads>
+      <owl:NamedIndividual rdf:ID="Fullstack_2">
+        <uni:title rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+        >FireStack</uni:title>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+        >Fullstack 2 FireStack</rdfs:label>
+        <rdf:type rdf:resource="#Fullstack"/>
+        <uni:numberOfEmployees rdf:datatype="http://www.w3.org/2001/XMLSchema#integer"
+        >30</uni:numberOfEmployees>
+      </owl:NamedIndividual>
+    </uni:leads>
+    <uni:firstname rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Eva</uni:firstname>
+    <uni:age rdf:datatype="http://www.w3.org/2001/XMLSchema#integer"
+    >39</uni:age>
+    <uni:sitsOn rdf:resource="#Ergonomic_1"/>
+  </owl:NamedIndividual>
+  <swrl:Imp rdf:about="Rule-3">
+    <swrl:head>
+      <swrl:AtomList>
+        <rdf:first>
+          <swrl:ClassAtom>
+            <swrl:classPredicate rdf:resource="#highProfessional"/>
+            <swrl:argument1 rdf:resource="x"/>
+          </swrl:ClassAtom>
+        </rdf:first>
+        <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+      </swrl:AtomList>
+    </swrl:head>
+    <swrl:body>
+      <swrl:AtomList>
+        <rdf:rest>
+          <swrl:AtomList>
+            <rdf:first>
+              <swrl:DatavaluedPropertyAtom>
+                <swrl:argument2 rdf:resource="y"/>
+                <swrl:argument1 rdf:resource="x"/>
+                <swrl:propertyPredicate rdf:resource="#yearsOfWork"/>
+              </swrl:DatavaluedPropertyAtom>
+            </rdf:first>
+            <rdf:rest>
+              <swrl:AtomList>
+                <rdf:first>
+                  <swrl:BuiltinAtom>
+                    <swrl:arguments>
+                      <rdf:List>
+                        <rdf:rest>
+                          <rdf:List>
+                            <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+                            <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
+                            >2</rdf:first>
+                          </rdf:List>
+                        </rdf:rest>
+                        <rdf:first rdf:resource="y"/>
+                      </rdf:List>
+                    </swrl:arguments>
+                    <swrl:builtin rdf:resource="http://www.w3.org/2003/11/swrlb#greaterThan"/>
+                  </swrl:BuiltinAtom>
+                </rdf:first>
+                <rdf:rest>
+                  <swrl:AtomList>
+                    <rdf:rest>
+                      <swrl:AtomList>
+                        <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+                        <rdf:first>
+                          <swrl:BuiltinAtom>
+                            <swrl:builtin rdf:resource="http://www.w3.org/2003/11/swrlb#lessThan"/>
+                            <swrl:arguments>
+                              <rdf:List>
+                                <rdf:first>
+                                  <swrl:Variable rdf:about="z"/>
+                                </rdf:first>
+                                <rdf:rest>
+                                  <rdf:List>
+                                    <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+                                    <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
+                                    >30</rdf:first>
+                                  </rdf:List>
+                                </rdf:rest>
+                              </rdf:List>
+                            </swrl:arguments>
+                          </swrl:BuiltinAtom>
+                        </rdf:first>
+                      </swrl:AtomList>
+                    </rdf:rest>
+                    <rdf:first>
+                      <swrl:DatavaluedPropertyAtom>
+                        <swrl:propertyPredicate rdf:resource="#age"/>
+                        <swrl:argument2 rdf:resource="z"/>
+                        <swrl:argument1 rdf:resource="x"/>
+                      </swrl:DatavaluedPropertyAtom>
+                    </rdf:first>
+                  </swrl:AtomList>
+                </rdf:rest>
+              </swrl:AtomList>
+            </rdf:rest>
+          </swrl:AtomList>
+        </rdf:rest>
+        <rdf:first>
+          <swrl:ClassAtom>
+            <swrl:classPredicate rdf:resource="#Emloyee"/>
+            <swrl:argument1 rdf:resource="x"/>
+          </swrl:ClassAtom>
+        </rdf:first>
+      </swrl:AtomList>
+    </swrl:body>
+  </swrl:Imp>
+  <uni:Tech rdf:ID="Tech_3">
+    <uni:firstname rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Ioanna</uni:firstname>
+    <uni:worksAt rdf:resource="#FrontEnd_1"/>
+    <uni:lastname rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Xatzisava</uni:lastname>
+    <uni:age rdf:datatype="http://www.w3.org/2001/XMLSchema#integer"
+    >36</uni:age>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+    <uni:salary rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >1650E</uni:salary>
+    <uni:leads rdf:resource="#FrontEnd_1"/>
+    <uni:sitsOn>
+      <owl:NamedIndividual rdf:ID="Anatomic_1">
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+        >Anatomic 1</rdfs:label>
+        <rdf:type rdf:resource="#Anatomic"/>
+        <uni:amount rdf:datatype="http://www.w3.org/2001/XMLSchema#integer"
+        >10</uni:amount>
+        <uni:chairID rdf:datatype="http://www.w3.org/2001/XMLSchema#integer"
+        >01</uni:chairID>
+      </owl:NamedIndividual>
+    </uni:sitsOn>
+    <uni:yearsOfWork rdf:datatype="http://www.w3.org/2001/XMLSchema#integer"
+    >6</uni:yearsOfWork>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Tech 3 Ioanna</rdfs:label>
+    <uni:printsIn>
+      <owl:NamedIndividual rdf:ID="Laser_2">
+        <uni:colors rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean"
+        >false</uni:colors>
+        <rdf:type rdf:resource="#Laser"/>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+        >Laser 2 BW</rdfs:label>
+        <uni:watts rdf:datatype="http://www.w3.org/2001/XMLSchema#integer"
+        >45</uni:watts>
+      </owl:NamedIndividual>
+    </uni:printsIn>
+  </uni:Tech>
+  <owl:NamedIndividual rdf:ID="Web_7">
+    <uni:worksIn>
+      <owl:NamedIndividual rdf:ID="Windows-laptop_1">
+        <uni:ram rdf:datatype="http://www.w3.org/2001/XMLSchema#integer"
+        >16</uni:ram>
+        <uni:osVersion rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+        >10.02</uni:osVersion>
+        <uni:cores rdf:datatype="http://www.w3.org/2001/XMLSchema#integer"
+        >8</uni:cores>
+        <rdf:type rdf:resource="#Laptop"/>
+        <uni:nameBrand rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+        >Asus</uni:nameBrand>
+        <uni:hasOs rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+        >Windows</uni:hasOs>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+        >Windows-laptop 1 Asus</rdfs:label>
+        <uni:rom rdf:datatype="http://www.w3.org/2001/XMLSchema#integer"
+        >512</uni:rom>
+      </owl:NamedIndividual>
+    </uni:worksIn>
+    <uni:worksAt>
+      <owl:NamedIndividual rdf:ID="FrontEnd_2">
+        <uni:numberOfEmployees rdf:datatype="http://www.w3.org/2001/XMLSchema#integer"
+        >30</uni:numberOfEmployees>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+        >Front end 2 Frontninza</rdfs:label>
+        <uni:title rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+        >Frontninza</uni:title>
+        <rdf:type rdf:resource="#FrontEnd"/>
+      </owl:NamedIndividual>
+    </uni:worksAt>
+    <rdf:type rdf:resource="#Web"/>
+    <uni:yearsOfWork rdf:datatype="http://www.w3.org/2001/XMLSchema#integer"
+    >4</uni:yearsOfWork>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Web 7 Vaggelis</rdfs:label>
+    <uni:age rdf:datatype="http://www.w3.org/2001/XMLSchema#integer"
+    >36</uni:age>
+    <uni:firstname rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Vaggelis</uni:firstname>
+    <uni:printsIn rdf:resource="#Laser_1"/>
+    <uni:worksWith>
+      <owl:NamedIndividual rdf:ID="Html_2">
+        <uni:languageVersion rdf:datatype="http://www.w3.org/2001/XMLSchema#integer"
+        >5</uni:languageVersion>
+        <uni:isKnownPerfectBy>
+          <uni:Game3d rdf:ID="Game3d_4">
+            <uni:worksAt>
+              <owl:NamedIndividual rdf:ID="BackEnd_1">
+                <rdf:type rdf:resource="#BackEnd"/>
+                <uni:title rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+                >Tornado</uni:title>
+                <uni:numberOfEmployees rdf:datatype="http://www.w3.org/2001/XMLSchema#integer"
+                >20</uni:numberOfEmployees>
+                <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+                >Back end 1 Tornado</rdfs:label>
+              </owl:NamedIndividual>
+            </uni:worksAt>
+            <uni:printsIn rdf:resource="#ThreeD_1"/>
+            <uni:yearsOfWork rdf:datatype="http://www.w3.org/2001/XMLSchema#integer"
+            >3</uni:yearsOfWork>
+            <uni:age rdf:datatype="http://www.w3.org/2001/XMLSchema#integer"
+            >36</uni:age>
+            <uni:lastname rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+            >Tsapekos</uni:lastname>
+            <uni:worksIn>
+              <owl:NamedIndividual rdf:ID="Windows-laptop_2">
+                <uni:osVersion rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+                >10.04</uni:osVersion>
+                <uni:rom rdf:datatype="http://www.w3.org/2001/XMLSchema#integer"
+                >512</uni:rom>
+                <uni:nameBrand rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+                >DELL</uni:nameBrand>
+                <rdf:type rdf:resource="#Laptop"/>
+                <uni:ram rdf:datatype="http://www.w3.org/2001/XMLSchema#integer"
+                >32</uni:ram>
+                <uni:cores rdf:datatype="http://www.w3.org/2001/XMLSchema#integer"
+                >8</uni:cores>
+                <uni:hasOs rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+                >Windows</uni:hasOs>
+                <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+                >Windows-laptop 2 DELL</rdfs:label>
+              </owl:NamedIndividual>
+            </uni:worksIn>
+            <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+            <uni:salary rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+            >1300E</uni:salary>
+            <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+            >Game3d Alexis</rdfs:label>
+            <uni:sitsOn rdf:resource="#Anatomic_1"/>
+            <uni:firstname rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+            >Alexis</uni:firstname>
+            <uni:worksWith>
+              <owl:NamedIndividual rdf:ID="Sql_3">
+                <uni:languageVersion rdf:datatype="http://www.w3.org/2001/XMLSchema#integer"
+                >2022</uni:languageVersion>
+                <rdf:type rdf:resource="#Sql"/>
+                <uni:isKnownPerfectBy>
+                  <owl:NamedIndividual rdf:ID="Windows_5">
+                    <uni:firstname rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+                    >Eleni</uni:firstname>
+                    <uni:version rdf:datatype="http://www.w3.org/2001/XMLSchema#integer"
+                    >11</uni:version>
+                    <uni:age rdf:datatype="http://www.w3.org/2001/XMLSchema#integer"
+                    >35</uni:age>
+                    <uni:worksIn rdf:resource="#Windows-laptop_2"/>
+                    <uni:printsIn rdf:resource="#Laser_2"/>
+                    <uni:lastname rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+                    >Malliopoulou</uni:lastname>
+                    <uni:worksAt>
+                      <owl:NamedIndividual rdf:ID="BackEnd_3">
+                        <uni:title rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+                        >Platform</uni:title>
+                        <rdf:type rdf:resource="#BackEnd"/>
+                        <uni:numberOfEmployees rdf:datatype="http://www.w3.org/2001/XMLSchema#integer"
+                        >20</uni:numberOfEmployees>
+                        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+                        >Back end 3 Platform</rdfs:label>
+                      </owl:NamedIndividual>
+                    </uni:worksAt>
+                    <uni:yearsOfWork rdf:datatype="http://www.w3.org/2001/XMLSchema#integer"
+                    >4</uni:yearsOfWork>
+                    <rdf:type rdf:resource="#Windows"/>
+                    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+                    >Windows 5 Eleni</rdfs:label>
+                    <uni:sitsOn rdf:resource="#Comfort_1"/>
+                    <uni:worksWith rdf:resource="#Sql_3"/>
+                    <uni:salary rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+                    >1450E</uni:salary>
+                  </owl:NamedIndividual>
+                </uni:isKnownPerfectBy>
+                <uni:isKnownPerfectBy>
+                  <owl:NamedIndividual rdf:ID="Windows_1">
+                    <uni:worksAt rdf:resource="#FrontEnd_1"/>
+                    <uni:yearsOfWork rdf:datatype="http://www.w3.org/2001/XMLSchema#integer"
+                    >4</uni:yearsOfWork>
+                    <uni:version rdf:datatype="http://www.w3.org/2001/XMLSchema#integer"
+                    >11</uni:version>
+                    <uni:worksWith>
+                      <owl:NamedIndividual rdf:ID="Html_1">
+                        <uni:isKnownPerfectBy>
+                          <owl:NamedIndividual rdf:ID="Game2d_5">
+                            <uni:worksWith>
+                              <owl:NamedIndividual rdf:ID="Csharp_2">
+                                <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+                                >Csharp 2 9</rdfs:label>
+                                <uni:isKnownPerfectBy>
+                                  <uni:Web rdf:ID="Web_8">
+                                    <uni:printsIn rdf:resource="#Laser_2"/>
+                                    <uni:worksIn rdf:resource="#Windows-laptop_2"/>
+                                    <uni:sitsOn>
+                                      <owl:NamedIndividual rdf:ID="Gaming_1">
+                                        <uni:chairID rdf:datatype=
+                                        "http://www.w3.org/2001/XMLSchema#integer"
+                                        >04</uni:chairID>
+                                        <rdf:type rdf:resource="#Gaming"/>
+                                        <uni:amount rdf:datatype=
+                                        "http://www.w3.org/2001/XMLSchema#integer"
+                                        >15</uni:amount>
+                                        <rdfs:label rdf:datatype=
+                                        "http://www.w3.org/2001/XMLSchema#string"
+                                        >Gaming 1</rdfs:label>
+                                      </owl:NamedIndividual>
+                                    </uni:sitsOn>
+                                    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+                                    <uni:lastname rdf:datatype=
+                                    "http://www.w3.org/2001/XMLSchema#string"
+                                    >Seretis</uni:lastname>
+                                    <rdfs:label rdf:datatype=
+                                    "http://www.w3.org/2001/XMLSchema#string"
+                                    >Web 8 Markos</rdfs:label>
+                                    <uni:worksWith>
+                                      <owl:NamedIndividual rdf:ID="Sql_1">
+                                        <uni:isKnownPerfectBy>
+                                          <owl:NamedIndividual rdf:ID="Web_2">
+                                            <uni:age rdf:datatype=
+                                            "http://www.w3.org/2001/XMLSchema#integer"
+                                            >34</uni:age>
+                                            <uni:worksAt rdf:resource="#Fullstack_2"/>
+                                            <uni:sitsOn rdf:resource="#Anatomic_1"/>
+                                            <uni:yearsOfWork rdf:datatype=
+                                            "http://www.w3.org/2001/XMLSchema#integer"
+                                            >4</uni:yearsOfWork>
+                                            <uni:worksWith rdf:resource="#Sql_1"/>
+                                            <uni:salary rdf:datatype=
+                                            "http://www.w3.org/2001/XMLSchema#string"
+                                            >1450E</uni:salary>
+                                            <uni:worksWith rdf:resource="#Html_1"/>
+                                            <rdfs:label rdf:datatype=
+                                            "http://www.w3.org/2001/XMLSchema#string"
+                                            >Web 2 Nikiforos</rdfs:label>
+                                            <uni:worksWith>
+                                              <owl:NamedIndividual rdf:ID="Csharp_3">
+                                                <rdf:type rdf:resource="#Csharp"/>
+                                                <uni:languageVersion
+                                                 rdf:datatype=
+                                                "http://www.w3.org/2001/XMLSchema#integer"
+                                                >8</uni:languageVersion>
+                                                <uni:isKnownPerfectBy>
+                                                  <owl:NamedIndividual rdf:ID="Game3d_3">
+                                                    <rdfs:label
+                                                     rdf:datatype=
+                                                    "http://www.w3.org/2001/XMLSchema#string"
+                                                    >Game3d Dimitris</rdfs:label>
+                                                    <uni:worksAt rdf:resource="#Fullstack_2"/>
+                                                    <uni:worksWith rdf:resource="#Html_1"/>
+                                                    <uni:worksWith>
+                                                      <owl:NamedIndividual rdf:ID="Javascript_2">
+                                                        <rdf:type rdf:resource="#Javascript"/>
+                                                        <uni:isKnownPerfectBy>
+                                                          <owl:NamedIndividual rdf:ID="IOS_3">
+                                                            <uni:age
+                                                             rdf:datatype=
+                                                            "http://www.w3.org/2001/XMLSchema#integer"
+                                                            >40</uni:age>
+                                                            <uni:worksIn rdf:resource="#Windows-laptop_1"/>
+                                                            <uni:worksWith rdf:resource="#Sql_1"/>
+                                                            <uni:worksWith rdf:resource="#Csharp_2"/>
+                                                            <uni:version
+                                                             rdf:datatype=
+                                                            "http://www.w3.org/2001/XMLSchema#integer"
+                                                            >4</uni:version>
+                                                            <uni:lastname
+                                                             rdf:datatype=
+                                                            "http://www.w3.org/2001/XMLSchema#string"
+                                                            >Manini</uni:lastname>
+                                                            <uni:sitsOn rdf:resource="#Comfort_1"/>
+                                                            <uni:worksWith>
+                                                              <owl:NamedIndividual rdf:ID="Javascript_1">
+    <uni:languageVersion rdf:datatype="http://www.w3.org/2001/XMLSchema#integer"
+    >20</uni:languageVersion>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Javascript 1 20</rdfs:label>
+    <uni:isKnownPerfectBy>
+      <owl:NamedIndividual rdf:ID="Android_4">
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+        >Android 4 George</rdfs:label>
+        <uni:lastname rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+        >katsikaris</uni:lastname>
+        <uni:printsIn rdf:resource="#Laser_1"/>
+        <uni:worksIn rdf:resource="#Windows-laptop_2"/>
+        <uni:age rdf:datatype="http://www.w3.org/2001/XMLSchema#integer"
+        >36</uni:age>
+        <uni:version rdf:datatype="http://www.w3.org/2001/XMLSchema#integer"
+        >9</uni:version>
+        <uni:salary rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+        >1400E</uni:salary>
+        <rdf:type rdf:resource="#Android"/>
+        <uni:yearsOfWork rdf:datatype="http://www.w3.org/2001/XMLSchema#integer"
+        >5</uni:yearsOfWork>
+        <uni:sitsOn rdf:resource="#Ergonomic_1"/>
+        <uni:firstname rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+        >George</uni:firstname>
+        <uni:worksWith rdf:resource="#Sql_3"/>
+        <uni:worksAt rdf:resource="#BackEnd_3"/>
+      </owl:NamedIndividual>
+    </uni:isKnownPerfectBy>
+    <uni:isKnownPerfectBy>
+      <uni:Android rdf:ID="Android_3">
+        <uni:firstname rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+        >Maria</uni:firstname>
+        <uni:version rdf:datatype="http://www.w3.org/2001/XMLSchema#integer"
+        >10</uni:version>
+        <uni:yearsOfWork rdf:datatype="http://www.w3.org/2001/XMLSchema#integer"
+        >6</uni:yearsOfWork>
+        <uni:worksWith rdf:resource="#Javascript_1"/>
+        <uni:worksWith rdf:resource="#Sql_3"/>
+        <uni:worksAt rdf:resource="#Fullstack_2"/>
+        <uni:printsIn rdf:resource="#Laser_1"/>
+        <uni:worksWith rdf:resource="#Html_1"/>
+        <uni:lastname rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+        >Tampaki</uni:lastname>
+        <uni:worksIn rdf:resource="#Windows-laptop_1"/>
+        <uni:age rdf:datatype="http://www.w3.org/2001/XMLSchema#integer"
+        >32</uni:age>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+        >Android 3 Maria</rdfs:label>
+        <uni:sitsOn rdf:resource="#Anatomic_1"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+        <uni:salary rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+        >1500E</uni:salary>
+      </uni:Android>
+    </uni:isKnownPerfectBy>
+    <uni:isKnownPerfectBy>
+      <owl:NamedIndividual rdf:ID="Android_2">
+        <uni:worksAt rdf:resource="#FrontEnd_2"/>
+        <uni:worksIn rdf:resource="#Windows-laptop_2"/>
+        <uni:worksWith rdf:resource="#Javascript_1"/>
+        <uni:worksWith rdf:resource="#Html_2"/>
+        <uni:sitsOn rdf:resource="#Ergonomic_1"/>
+        <uni:salary rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+        >1400E</uni:salary>
+        <rdf:type rdf:resource="#Android"/>
+        <uni:printsIn rdf:resource="#Laser_2"/>
+        <uni:yearsOfWork rdf:datatype="http://www.w3.org/2001/XMLSchema#integer"
+        >4</uni:yearsOfWork>
+        <uni:version rdf:datatype="http://www.w3.org/2001/XMLSchema#integer"
+        >9</uni:version>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+        >Android 2 Katerina</rdfs:label>
+        <uni:firstname rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+        >Katerina</uni:firstname>
+        <uni:age rdf:datatype="http://www.w3.org/2001/XMLSchema#integer"
+        >29</uni:age>
+        <uni:lastname rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+        >papadopoulou</uni:lastname>
+      </owl:NamedIndividual>
+    </uni:isKnownPerfectBy>
+    <uni:isKnownPerfectBy>
+      <owl:NamedIndividual rdf:ID="Android_1">
+        <uni:lastname rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+        >Souliotis</uni:lastname>
+        <uni:age rdf:datatype="http://www.w3.org/2001/XMLSchema#integer"
+        >23</uni:age>
+        <uni:version rdf:datatype="http://www.w3.org/2001/XMLSchema#integer"
+        >10</uni:version>
+        <uni:firstname rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+        >Gregory</uni:firstname>
+        <uni:sitsOn rdf:resource="#Anatomic_1"/>
+        <uni:worksIn rdf:resource="#Windows-laptop_2"/>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+        >Android 1 Gregory</rdfs:label>
+        <uni:worksAt rdf:resource="#Fullstack_1"/>
+        <uni:worksWith rdf:resource="#Javascript_2"/>
+        <rdf:type rdf:resource="#Android"/>
+        <uni:yearsOfWork rdf:datatype="http://www.w3.org/2001/XMLSchema#integer"
+        >3</uni:yearsOfWork>
+        <uni:printsIn rdf:resource="#Laser_2"/>
+        <uni:salary rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+        >1350E</uni:salary>
+      </owl:NamedIndividual>
+    </uni:isKnownPerfectBy>
+    <rdf:type rdf:resource="#Javascript"/>                    </owl:NamedIndividual>
+                                                            </uni:worksWith>
+                                                            <uni:printsIn rdf:resource="#Laser_2"/>
+                                                            <uni:salary
+                                                             rdf:datatype=
+                                                            "http://www.w3.org/2001/XMLSchema#string"
+                                                            >1650E</uni:salary>
+                                                            <uni:firstname
+                                                             rdf:datatype=
+                                                            "http://www.w3.org/2001/XMLSchema#string"
+                                                            >Chara</uni:firstname>
+                                                            <rdfs:label
+                                                             rdf:datatype=
+                                                            "http://www.w3.org/2001/XMLSchema#string"
+                                                            >IOS 3 Chara</rdfs:label>
+                                                            <uni:worksAt rdf:resource="#Fullstack_1"/>
+                                                            <rdf:type rdf:resource="#IOS"/>
+                                                            <uni:yearsOfWork
+                                                             rdf:datatype=
+                                                            "http://www.w3.org/2001/XMLSchema#integer"
+                                                            >7</uni:yearsOfWork>
+                                                          </owl:NamedIndividual>
+                                                        </uni:isKnownPerfectBy>
+                                                        <uni:isKnownPerfectBy>
+                                                          <owl:NamedIndividual rdf:ID="IOS_2">
+                                                            <uni:version
+                                                             rdf:datatype=
+                                                            "http://www.w3.org/2001/XMLSchema#integer"
+                                                            >4</uni:version>
+                                                            <uni:worksIn rdf:resource="#Windows-laptop_1"/>
+                                                            <uni:yearsOfWork
+                                                             rdf:datatype=
+                                                            "http://www.w3.org/2001/XMLSchema#integer"
+                                                            >6</uni:yearsOfWork>
+                                                            <uni:firstname
+                                                             rdf:datatype=
+                                                            "http://www.w3.org/2001/XMLSchema#string"
+                                                            >Stratos</uni:firstname>
+                                                            <uni:worksWith>
+                                                              <owl:NamedIndividual rdf:ID="Sql_2">
+    <uni:isKnownPerfectBy>
+      <owl:NamedIndividual rdf:ID="Web_9">
+        <uni:worksWith rdf:resource="#Sql_1"/>
+        <uni:sitsOn rdf:resource="#Ergonomic_1"/>
+        <uni:worksWith rdf:resource="#Csharp_3"/>
+        <uni:lastname rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+        >Konstantinou</uni:lastname>
+        <uni:firstname rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+        >Aggelos</uni:firstname>
+        <uni:salary rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+        >1350E</uni:salary>
+        <uni:worksWith rdf:resource="#Javascript_2"/>
+        <uni:age rdf:datatype="http://www.w3.org/2001/XMLSchema#integer"
+        >28</uni:age>
+        <uni:worksWith rdf:resource="#Html_2"/>
+        <uni:worksIn rdf:resource="#Windows-laptop_1"/>
+        <uni:yearsOfWork rdf:datatype="http://www.w3.org/2001/XMLSchema#integer"
+        >4</uni:yearsOfWork>
+        <uni:worksAt rdf:resource="#Fullstack_1"/>
+        <rdf:type rdf:resource="#Web"/>
+        <uni:printsIn rdf:resource="#Laser_2"/>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+        >Web 9 Aggelos</rdfs:label>
+      </owl:NamedIndividual>
+    </uni:isKnownPerfectBy>
+    <uni:isKnownPerfectBy>
+      <uni:Web rdf:ID="Web_6">
+        <uni:firstname rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+        >Anastasia</uni:firstname>
+        <uni:lastname rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+        >Gerokosta</uni:lastname>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+        >Web 6 Anastasia</rdfs:label>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+        <uni:yearsOfWork rdf:datatype="http://www.w3.org/2001/XMLSchema#integer"
+        >4</uni:yearsOfWork>
+        <uni:age rdf:datatype="http://www.w3.org/2001/XMLSchema#integer"
+        >29</uni:age>
+        <uni:worksIn rdf:resource="#Windows-laptop_1"/>
+        <uni:worksAt>
+          <owl:NamedIndividual rdf:ID="BackEnd_2">
+            <uni:title rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+            >Hurricane</uni:title>
+            <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+            >Back end 2 Hurricane</rdfs:label>
+            <uni:numberOfEmployees rdf:datatype="http://www.w3.org/2001/XMLSchema#integer"
+            >25</uni:numberOfEmployees>
+            <rdf:type rdf:resource="#BackEnd"/>
+          </owl:NamedIndividual>
+        </uni:worksAt>
+        <uni:salary rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+        >1400E</uni:salary>
+        <uni:worksWith rdf:resource="#Sql_2"/>
+        <uni:sitsOn rdf:resource="#Anatomic_1"/>
+        <uni:printsIn rdf:resource="#Laser_2"/>
+      </uni:Web>
+    </uni:isKnownPerfectBy>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Sql 2 2019</rdfs:label>
+    <rdf:type rdf:resource="#Sql"/>
+    <uni:languageVersion rdf:datatype="http://www.w3.org/2001/XMLSchema#integer"
+    >2019</uni:languageVersion>                               </owl:NamedIndividual>
+                                                            </uni:worksWith>
+                                                            <uni:lastname
+                                                             rdf:datatype=
+                                                            "http://www.w3.org/2001/XMLSchema#string"
+                                                            >Stratigakis</uni:lastname>
+                                                            <uni:worksAt rdf:resource="#BackEnd_2"/>
+                                                            <uni:age
+                                                             rdf:datatype=
+                                                            "http://www.w3.org/2001/XMLSchema#integer"
+                                                            >34</uni:age>
+                                                            <uni:salary
+                                                             rdf:datatype=
+                                                            "http://www.w3.org/2001/XMLSchema#string"
+                                                            >1500E</uni:salary>
+                                                            <rdfs:label
+                                                             rdf:datatype=
+                                                            "http://www.w3.org/2001/XMLSchema#string"
+                                                            >IOS 2 Stratos</rdfs:label>
+                                                            <rdf:type rdf:resource="#IOS"/>
+                                                            <uni:sitsOn rdf:resource="#Ergonomic_1"/>
+                                                            <uni:printsIn rdf:resource="#Laser_1"/>
+                                                          </owl:NamedIndividual>
+                                                        </uni:isKnownPerfectBy>
+                                                        <uni:isKnownPerfectBy>
+                                                          <owl:NamedIndividual rdf:ID="IOS_1">
+                                                            <uni:yearsOfWork
+                                                             rdf:datatype=
+                                                            "http://www.w3.org/2001/XMLSchema#integer"
+                                                            >5</uni:yearsOfWork>
+                                                            <rdfs:label
+                                                             rdf:datatype=
+                                                            "http://www.w3.org/2001/XMLSchema#string"
+                                                            >IOS 1 Niki</rdfs:label>
+                                                            <uni:worksWith rdf:resource="#Csharp_3"/>
+                                                            <uni:lastname
+                                                             rdf:datatype=
+                                                            "http://www.w3.org/2001/XMLSchema#string"
+                                                            >Andreadou</uni:lastname>
+                                                            <uni:age
+                                                             rdf:datatype=
+                                                            "http://www.w3.org/2001/XMLSchema#integer"
+                                                            >26</uni:age>
+                                                            <uni:version
+                                                             rdf:datatype=
+                                                            "http://www.w3.org/2001/XMLSchema#integer"
+                                                            >3</uni:version>
+                                                            <uni:printsIn rdf:resource="#Laser_2"/>
+                                                            <uni:sitsOn rdf:resource="#Anatomic_1"/>
+                                                            <rdf:type rdf:resource="#IOS"/>
+                                                            <uni:worksIn rdf:resource="#Windows-laptop_1"/>
+                                                            <uni:firstname
+                                                             rdf:datatype=
+                                                            "http://www.w3.org/2001/XMLSchema#string"
+                                                            >Niki</uni:firstname>
+                                                            <uni:worksWith rdf:resource="#Html_2"/>
+                                                            <uni:salary
+                                                             rdf:datatype=
+                                                            "http://www.w3.org/2001/XMLSchema#string"
+                                                            >1450E</uni:salary>
+                                                            <uni:worksAt rdf:resource="#Fullstack_1"/>
+                                                          </owl:NamedIndividual>
+                                                        </uni:isKnownPerfectBy>
+                                                        <uni:languageVersion
+                                                         rdf:datatype=
+                                                        "http://www.w3.org/2001/XMLSchema#integer"
+                                                        >19</uni:languageVersion>
+                                                        <rdfs:label
+                                                         rdf:datatype=
+                                                        "http://www.w3.org/2001/XMLSchema#string"
+                                                        >Javascript 2 19</rdfs:label>
+                                                      </owl:NamedIndividual>
+                                                    </uni:worksWith>
+                                                    <uni:printsIn rdf:resource="#ThreeD_1"/>
+                                                    <uni:lastname
+                                                     rdf:datatype=
+                                                    "http://www.w3.org/2001/XMLSchema#string"
+                                                    >Kosotopoulos</uni:lastname>
+                                                    <uni:worksWith rdf:resource="#Csharp_2"/>
+                                                    <uni:yearsOfWork
+                                                     rdf:datatype=
+                                                    "http://www.w3.org/2001/XMLSchema#integer"
+                                                    >3</uni:yearsOfWork>
+                                                    <uni:worksIn rdf:resource="#Windows-laptop_1"/>
+                                                    <uni:firstname
+                                                     rdf:datatype=
+                                                    "http://www.w3.org/2001/XMLSchema#string"
+                                                    >Dimitris</uni:firstname>
+                                                    <uni:salary
+                                                     rdf:datatype=
+                                                    "http://www.w3.org/2001/XMLSchema#string"
+                                                    >1350E</uni:salary>
+                                                    <uni:sitsOn rdf:resource="#Comfort_2"/>
+                                                    <uni:age rdf:datatype=
+                                                    "http://www.w3.org/2001/XMLSchema#integer"
+                                                    >26</uni:age>
+                                                    <rdf:type rdf:resource="#Game3d"/>
+                                                  </owl:NamedIndividual>
+                                                </uni:isKnownPerfectBy>
+                                                <uni:isKnownPerfectBy>
+                                                  <owl:NamedIndividual rdf:ID="Game3d_1">
+                                                    <uni:worksAt rdf:resource="#BackEnd_2"/>
+                                                    <uni:salary
+                                                     rdf:datatype=
+                                                    "http://www.w3.org/2001/XMLSchema#string"
+                                                    >1150E</uni:salary>
+                                                    <uni:lastname
+                                                     rdf:datatype=
+                                                    "http://www.w3.org/2001/XMLSchema#string"
+                                                    >Iosifidis</uni:lastname>
+                                                    <uni:printsIn rdf:resource="#ThreeD_1"/>
+                                                    <uni:worksWith rdf:resource="#Sql_2"/>
+                                                    <rdfs:label
+                                                     rdf:datatype=
+                                                    "http://www.w3.org/2001/XMLSchema#string"
+                                                    >Game3d Nikos</rdfs:label>
+                                                    <uni:sitsOn rdf:resource="#Ergonomic_1"/>
+                                                    <uni:yearsOfWork
+                                                     rdf:datatype=
+                                                    "http://www.w3.org/2001/XMLSchema#integer"
+                                                    >1</uni:yearsOfWork>
+                                                    <uni:firstname
+                                                     rdf:datatype=
+                                                    "http://www.w3.org/2001/XMLSchema#string"
+                                                    >Nikos</uni:firstname>
+                                                    <uni:age rdf:datatype=
+                                                    "http://www.w3.org/2001/XMLSchema#integer"
+                                                    >25</uni:age>
+                                                    <uni:worksIn rdf:resource="#Windows-laptop_2"/>
+                                                    <rdf:type rdf:resource="#Game3d"/>
+                                                  </owl:NamedIndividual>
+                                                </uni:isKnownPerfectBy>
+                                                <rdfs:label rdf:datatype=
+                                                "http://www.w3.org/2001/XMLSchema#string"
+                                                >Csharp 3 8</rdfs:label>
+                                              </owl:NamedIndividual>
+                                            </uni:worksWith>
+                                            <rdf:type rdf:resource="#Web"/>
+                                            <uni:worksIn rdf:resource="#Windows-laptop_1"/>
+                                            <uni:worksWith rdf:resource="#Javascript_2"/>
+                                            <uni:lastname rdf:datatype=
+                                            "http://www.w3.org/2001/XMLSchema#string"
+                                            >Stathakis</uni:lastname>
+                                            <uni:firstname rdf:datatype=
+                                            "http://www.w3.org/2001/XMLSchema#string"
+                                            >Nikiforos</uni:firstname>
+                                            <uni:printsIn rdf:resource="#Laser_2"/>
+                                          </owl:NamedIndividual>
+                                        </uni:isKnownPerfectBy>
+                                        <uni:isKnownPerfectBy>
+                                          <owl:NamedIndividual rdf:ID="Web_14">
+                                            <uni:printsIn rdf:resource="#Laser_1"/>
+                                            <uni:worksIn rdf:resource="#Windows-laptop_2"/>
+                                            <uni:worksAt rdf:resource="#FrontEnd_2"/>
+                                            <uni:firstname rdf:datatype=
+                                            "http://www.w3.org/2001/XMLSchema#string"
+                                            >Aris</uni:firstname>
+                                            <uni:sitsOn rdf:resource="#Ergonomic_1"/>
+                                            <uni:lastname rdf:datatype=
+                                            "http://www.w3.org/2001/XMLSchema#string"
+                                            >Tremmas</uni:lastname>
+                                            <uni:worksWith rdf:resource="#Html_2"/>
+                                            <uni:yearsOfWork rdf:datatype=
+                                            "http://www.w3.org/2001/XMLSchema#integer"
+                                            >2</uni:yearsOfWork>
+                                            <uni:salary rdf:datatype=
+                                            "http://www.w3.org/2001/XMLSchema#string"
+                                            >1250E</uni:salary>
+                                            <rdfs:label rdf:datatype=
+                                            "http://www.w3.org/2001/XMLSchema#string"
+                                            >Web 14 Aris</rdfs:label>
+                                            <uni:age rdf:datatype=
+                                            "http://www.w3.org/2001/XMLSchema#integer"
+                                            >46</uni:age>
+                                            <rdf:type rdf:resource="#Web"/>
+                                          </owl:NamedIndividual>
+                                        </uni:isKnownPerfectBy>
+                                        <uni:isKnownPerfectBy>
+                                          <owl:NamedIndividual rdf:ID="Web_10">
+                                            <uni:worksIn rdf:resource="#Windows-laptop_1"/>
+                                            <uni:worksAt rdf:resource="#BackEnd_2"/>
+                                            <uni:yearsOfWork rdf:datatype=
+                                            "http://www.w3.org/2001/XMLSchema#integer"
+                                            >5</uni:yearsOfWork>
+                                            <uni:sitsOn rdf:resource="#Comfort_1"/>
+                                            <rdf:type rdf:resource="#Web"/>
+                                            <uni:worksWith rdf:resource="#Sql_2"/>
+                                            <uni:firstname rdf:datatype=
+                                            "http://www.w3.org/2001/XMLSchema#string"
+                                            >Rikard</uni:firstname>
+                                            <uni:lastname rdf:datatype=
+                                            "http://www.w3.org/2001/XMLSchema#string"
+                                            >Smith</uni:lastname>
+                                            <uni:salary rdf:datatype=
+                                            "http://www.w3.org/2001/XMLSchema#string"
+                                            >1600E</uni:salary>
+                                            <uni:age rdf:datatype=
+                                            "http://www.w3.org/2001/XMLSchema#integer"
+                                            >43</uni:age>
+                                            <rdfs:label rdf:datatype=
+                                            "http://www.w3.org/2001/XMLSchema#string"
+                                            >Web 10 Rikard</rdfs:label>
+                                            <uni:printsIn rdf:resource="#Laser_2"/>
+                                          </owl:NamedIndividual>
+                                        </uni:isKnownPerfectBy>
+                                        <uni:languageVersion rdf:datatype=
+                                        "http://www.w3.org/2001/XMLSchema#integer"
+                                        >2018</uni:languageVersion>
+                                        <rdfs:label rdf:datatype=
+                                        "http://www.w3.org/2001/XMLSchema#string"
+                                        >Sql 1 2018</rdfs:label>
+                                        <rdf:type rdf:resource="#Sql"/>
+                                      </owl:NamedIndividual>
+                                    </uni:worksWith>
+                                    <uni:salary rdf:datatype=
+                                    "http://www.w3.org/2001/XMLSchema#string"
+                                    >1450E</uni:salary>
+                                    <uni:yearsOfWork rdf:datatype=
+                                    "http://www.w3.org/2001/XMLSchema#integer"
+                                    >5</uni:yearsOfWork>
+                                    <uni:firstname rdf:datatype=
+                                    "http://www.w3.org/2001/XMLSchema#string"
+                                    >Markos</uni:firstname>
+                                    <uni:age rdf:datatype="http://www.w3.org/2001/XMLSchema#integer"
+                                    >32</uni:age>
+                                    <uni:worksAt rdf:resource="#BackEnd_2"/>
+                                  </uni:Web>
+                                </uni:isKnownPerfectBy>
+                                <uni:isKnownPerfectBy>
+                                  <uni:Web rdf:ID="Web_5">
+                                    <rdfs:label rdf:datatype=
+                                    "http://www.w3.org/2001/XMLSchema#string"
+                                    >Web 5 Sotiris</rdfs:label>
+                                    <uni:worksIn rdf:resource="#Windows-laptop_2"/>
+                                    <uni:sitsOn rdf:resource="#Comfort_2"/>
+                                    <uni:worksWith rdf:resource="#Sql_3"/>
+                                    <uni:printsIn rdf:resource="#Laser_1"/>
+                                    <uni:salary rdf:datatype=
+                                    "http://www.w3.org/2001/XMLSchema#string"
+                                    >1250E</uni:salary>
+                                    <uni:worksAt rdf:resource="#BackEnd_3"/>
+                                    <uni:yearsOfWork rdf:datatype=
+                                    "http://www.w3.org/2001/XMLSchema#integer"
+                                    >2</uni:yearsOfWork>
+                                    <uni:lastname rdf:datatype=
+                                    "http://www.w3.org/2001/XMLSchema#string"
+                                    >Sotiriou</uni:lastname>
+                                    <uni:age rdf:datatype="http://www.w3.org/2001/XMLSchema#integer"
+                                    >34</uni:age>
+                                    <uni:firstname rdf:datatype=
+                                    "http://www.w3.org/2001/XMLSchema#string"
+                                    >Sotiris</uni:firstname>
+                                    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+                                  </uni:Web>
+                                </uni:isKnownPerfectBy>
+                                <uni:isKnownPerfectBy>
+                                  <owl:NamedIndividual rdf:ID="Web_3">
+                                    <uni:worksWith rdf:resource="#Javascript_2"/>
+                                    <uni:yearsOfWork rdf:datatype=
+                                    "http://www.w3.org/2001/XMLSchema#integer"
+                                    >5</uni:yearsOfWork>
+                                    <uni:worksWith rdf:resource="#Csharp_2"/>
+                                    <rdfs:label rdf:datatype=
+                                    "http://www.w3.org/2001/XMLSchema#string"
+                                    >Web 3 Marios</rdfs:label>
+                                    <uni:worksWith rdf:resource="#Html_2"/>
+                                    <uni:printsIn rdf:resource="#Laser_1"/>
+                                    <uni:lastname rdf:datatype=
+                                    "http://www.w3.org/2001/XMLSchema#string"
+                                    >Akrivopoulos</uni:lastname>
+                                    <uni:salary rdf:datatype=
+                                    "http://www.w3.org/2001/XMLSchema#string"
+                                    >1500E</uni:salary>
+                                    <uni:worksWith rdf:resource="#Sql_3"/>
+                                    <uni:worksIn rdf:resource="#Windows-laptop_1"/>
+                                    <rdf:type rdf:resource="#Web"/>
+                                    <uni:worksAt rdf:resource="#Fullstack_2"/>
+                                    <uni:sitsOn rdf:resource="#Comfort_1"/>
+                                    <uni:age rdf:datatype="http://www.w3.org/2001/XMLSchema#integer"
+                                    >26</uni:age>
+                                    <uni:firstname rdf:datatype=
+                                    "http://www.w3.org/2001/XMLSchema#string"
+                                    >Marios</uni:firstname>
+                                  </owl:NamedIndividual>
+                                </uni:isKnownPerfectBy>
+                                <rdf:type rdf:resource="#Csharp"/>
+                                <uni:languageVersion rdf:datatype=
+                                "http://www.w3.org/2001/XMLSchema#integer"
+                                >9</uni:languageVersion>
+                              </owl:NamedIndividual>
+                            </uni:worksWith>
+                            <uni:firstname rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+                            >Gregory</uni:firstname>
+                            <uni:worksAt rdf:resource="#Fullstack_2"/>
+                            <uni:worksWith rdf:resource="#Javascript_1"/>
+                            <uni:printsIn rdf:resource="#Laser_1"/>
+                            <uni:worksWith rdf:resource="#Sql_1"/>
+                            <uni:worksIn rdf:resource="#Windows-laptop_2"/>
+                            <uni:age rdf:datatype="http://www.w3.org/2001/XMLSchema#integer"
+                            >31</uni:age>
+                            <rdf:type rdf:resource="#Game2d"/>
+                            <uni:sitsOn>
+                              <owl:NamedIndividual rdf:ID="Gaming_2">
+                                <uni:chairID rdf:datatype="http://www.w3.org/2001/XMLSchema#integer"
+                                >041</uni:chairID>
+                                <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+                                >Gaming 2</rdfs:label>
+                                <uni:amount rdf:datatype="http://www.w3.org/2001/XMLSchema#integer"
+                                >10</uni:amount>
+                                <rdf:type rdf:resource="#Gaming"/>
+                              </owl:NamedIndividual>
+                            </uni:sitsOn>
+                            <uni:lastname rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+                            >Makris</uni:lastname>
+                            <uni:salary rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+                            >1250E</uni:salary>
+                            <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+                            >Game2d Gregory</rdfs:label>
+                            <uni:yearsOfWork rdf:datatype="http://www.w3.org/2001/XMLSchema#integer"
+                            >2</uni:yearsOfWork>
+                          </owl:NamedIndividual>
+                        </uni:isKnownPerfectBy>
+                        <uni:isKnownPerfectBy>
+                          <owl:NamedIndividual rdf:ID="Game2d_4">
+                            <uni:worksWith rdf:resource="#Csharp_3"/>
+                            <uni:worksWith rdf:resource="#Javascript_2"/>
+                            <uni:worksWith rdf:resource="#Html_2"/>
+                            <uni:age rdf:datatype="http://www.w3.org/2001/XMLSchema#integer"
+                            >26</uni:age>
+                            <uni:worksIn rdf:resource="#Windows-laptop_1"/>
+                            <rdf:type rdf:resource="#Game2d"/>
+                            <uni:yearsOfWork rdf:datatype="http://www.w3.org/2001/XMLSchema#integer"
+                            >3</uni:yearsOfWork>
+                            <uni:worksAt rdf:resource="#Fullstack_1"/>
+                            <uni:firstname rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+                            >Manos</uni:firstname>
+                            <uni:lastname rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+                            >Marakis</uni:lastname>
+                            <uni:worksWith rdf:resource="#Sql_2"/>
+                            <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+                            >Game 2d Manos</rdfs:label>
+                            <uni:salary rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+                            >1350E</uni:salary>
+                            <uni:printsIn rdf:resource="#Laser_2"/>
+                            <uni:sitsOn rdf:resource="#Gaming_2"/>
+                          </owl:NamedIndividual>
+                        </uni:isKnownPerfectBy>
+                        <uni:isKnownPerfectBy>
+                          <owl:NamedIndividual rdf:ID="Game2d_3">
+                            <uni:printsIn rdf:resource="#Laser_2"/>
+                            <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+                            >Game 2d Chris</rdfs:label>
+                            <uni:yearsOfWork rdf:datatype="http://www.w3.org/2001/XMLSchema#integer"
+                            >4</uni:yearsOfWork>
+                            <uni:lastname rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+                            >Millis</uni:lastname>
+                            <rdf:type rdf:resource="#Game2d"/>
+                            <uni:worksAt rdf:resource="#BackEnd_3"/>
+                            <uni:worksIn rdf:resource="#Windows-laptop_2"/>
+                            <uni:sitsOn rdf:resource="#Gaming_1"/>
+                            <uni:firstname rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+                            >Chris</uni:firstname>
+                            <uni:age rdf:datatype="http://www.w3.org/2001/XMLSchema#integer"
+                            >29</uni:age>
+                            <uni:worksWith rdf:resource="#Sql_3"/>
+                            <uni:salary rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+                            >1450E</uni:salary>
+                          </owl:NamedIndividual>
+                        </uni:isKnownPerfectBy>
+                        <uni:isKnownPerfectBy>
+                          <owl:NamedIndividual rdf:ID="Game2d_2">
+                            <rdf:type rdf:resource="#Game2d"/>
+                            <uni:worksWith rdf:resource="#Sql_1"/>
+                            <uni:firstname rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+                            >Kostas</uni:firstname>
+                            <uni:salary rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+                            >1500E</uni:salary>
+                            <uni:yearsOfWork rdf:datatype="http://www.w3.org/2001/XMLSchema#integer"
+                            >5</uni:yearsOfWork>
+                            <uni:worksWith rdf:resource="#Html_2"/>
+                            <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+                            >Game 2d Kostas</rdfs:label>
+                            <uni:worksIn rdf:resource="#Windows-laptop_1"/>
+                            <uni:worksWith rdf:resource="#Csharp_2"/>
+                            <uni:printsIn rdf:resource="#Laser_1"/>
+                            <uni:worksAt rdf:resource="#Fullstack_1"/>
+                            <uni:lastname rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+                            >Kapetanios</uni:lastname>
+                            <uni:age rdf:datatype="http://www.w3.org/2001/XMLSchema#integer"
+                            >36</uni:age>
+                            <uni:sitsOn rdf:resource="#Gaming_2"/>
+                          </owl:NamedIndividual>
+                        </uni:isKnownPerfectBy>
+                        <uni:isKnownPerfectBy>
+                          <uni:Game2d rdf:ID="Game2d_1">
+                            <uni:worksWith rdf:resource="#Javascript_1"/>
+                            <uni:salary rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+                            >1400E</uni:salary>
+                            <uni:worksIn rdf:resource="#Windows-laptop_2"/>
+                            <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+                            <uni:age rdf:datatype="http://www.w3.org/2001/XMLSchema#integer"
+                            >28</uni:age>
+                            <uni:worksAt rdf:resource="#FrontEnd_1"/>
+                            <uni:firstname rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+                            >John</uni:firstname>
+                            <uni:yearsOfWork rdf:datatype="http://www.w3.org/2001/XMLSchema#integer"
+                            >3</uni:yearsOfWork>
+                            <uni:worksWith rdf:resource="#Html_2"/>
+                            <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+                            >Game 2d John</rdfs:label>
+                            <uni:printsIn rdf:resource="#Laser_2"/>
+                            <uni:lastname rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+                            >Poulios</uni:lastname>
+                            <uni:sitsOn rdf:resource="#Anatomic_1"/>
+                          </uni:Game2d>
+                        </uni:isKnownPerfectBy>
+                        <rdf:type rdf:resource="#Html"/>
+                        <uni:languageVersion rdf:datatype="http://www.w3.org/2001/XMLSchema#integer"
+                        >4</uni:languageVersion>
+                        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+                        >Html 1 4</rdfs:label>
+                      </owl:NamedIndividual>
+                    </uni:worksWith>
+                    <uni:lastname rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+                    >Arsenakis</uni:lastname>
+                    <uni:worksIn rdf:resource="#Windows-laptop_2"/>
+                    <uni:age rdf:datatype="http://www.w3.org/2001/XMLSchema#integer"
+                    >32</uni:age>
+                    <uni:salary rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+                    >1400E</uni:salary>
+                    <uni:printsIn rdf:resource="#Laser_2"/>
+                    <uni:worksWith rdf:resource="#Javascript_2"/>
+                    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+                    >Windows 1 Sakis</rdfs:label>
+                    <uni:sitsOn rdf:resource="#Comfort_2"/>
+                    <rdf:type rdf:resource="#Windows"/>
+                    <uni:firstname rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+                    >Sakis</uni:firstname>
+                  </owl:NamedIndividual>
+                </uni:isKnownPerfectBy>
+                <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+                >Sql 3 2022</rdfs:label>
+              </owl:NamedIndividual>
+            </uni:worksWith>
+          </uni:Game3d>
+        </uni:isKnownPerfectBy>
+        <uni:isKnownPerfectBy rdf:resource="#Game3d_3"/>
+        <uni:isKnownPerfectBy>
+          <uni:Game3d rdf:ID="Game3d_2">
+            <uni:salary rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+            >1250E</uni:salary>
+            <uni:lastname rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+            >Petridis</uni:lastname>
+            <uni:printsIn rdf:resource="#ThreeD_1"/>
+            <uni:firstname rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+            >Petros</uni:firstname>
+            <uni:yearsOfWork rdf:datatype="http://www.w3.org/2001/XMLSchema#integer"
+            >2</uni:yearsOfWork>
+            <uni:age rdf:datatype="http://www.w3.org/2001/XMLSchema#integer"
+            >29</uni:age>
+            <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+            >Game3d Petros</rdfs:label>
+            <uni:worksIn rdf:resource="#Windows-laptop_2"/>
+            <uni:worksWith rdf:resource="#Html_2"/>
+            <uni:worksAt rdf:resource="#FrontEnd_1"/>
+            <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+            <uni:worksWith rdf:resource="#Javascript_2"/>
+            <uni:sitsOn rdf:resource="#Comfort_1"/>
+          </uni:Game3d>
+        </uni:isKnownPerfectBy>
+        <uni:isKnownPerfectBy rdf:resource="#Game3d_1"/>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+        >Html 2 5</rdfs:label>
+        <rdf:type rdf:resource="#Html"/>
+      </owl:NamedIndividual>
+    </uni:worksWith>
+    <uni:sitsOn rdf:resource="#Ergonomic_1"/>
+    <uni:salary rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >1350E</uni:salary>
+    <uni:lastname rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Tsalis</uni:lastname>
+  </owl:NamedIndividual>
+  <owl:NamedIndividual rdf:ID="Mail-server_2">
+    <uni:serverName rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Zoho</uni:serverName>
+    <rdf:type rdf:resource="#Mail-server"/>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Mail-server 2</rdfs:label>
+  </owl:NamedIndividual>
+  <owl:NamedIndividual rdf:ID="Performance-testing_1">
+    <uni:lastname rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >tsaligopoulos</uni:lastname>
+    <uni:worksOnlyIn rdf:resource="#MacOs_1"/>
+    <uni:sitsOn rdf:resource="#Ergonomic_1"/>
+    <uni:yearsOfWork rdf:datatype="http://www.w3.org/2001/XMLSchema#integer"
+    >3</uni:yearsOfWork>
+    <uni:salary rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >1300E</uni:salary>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Performance-testing 1 Dimitris</rdfs:label>
+    <uni:worksAt rdf:resource="#Fullstack_2"/>
+    <uni:age rdf:datatype="http://www.w3.org/2001/XMLSchema#integer"
+    >26</uni:age>
+    <uni:printsIn rdf:resource="#Laser_2"/>
+    <uni:firstname rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Dimitris</uni:firstname>
+    <uni:uses>
+      <owl:NamedIndividual rdf:ID="Selenium_1">
+        <rdf:type rdf:resource="#Selenium"/>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+        >Selenium 1 20</rdfs:label>
+        <uni:languageVersion rdf:datatype="http://www.w3.org/2001/XMLSchema#integer"
+        >20</uni:languageVersion>
+      </owl:NamedIndividual>
+    </uni:uses>
+    <rdf:type rdf:resource="#Performance-testing"/>
+  </owl:NamedIndividual>
+  <uni:Integration-testing rdf:ID="Integration-testing_1">
+    <uni:firstname rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Dimitra</uni:firstname>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+    <uni:sitsOn rdf:resource="#Anatomic_1"/>
+    <uni:yearsOfWork rdf:datatype="http://www.w3.org/2001/XMLSchema#integer"
+    >4</uni:yearsOfWork>
+    <uni:worksOnlyIn rdf:resource="#MacOs_1"/>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Integration-testing 1 Dimitra</rdfs:label>
+    <uni:lastname rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Vartzoka</uni:lastname>
+    <uni:age rdf:datatype="http://www.w3.org/2001/XMLSchema#integer"
+    >32</uni:age>
+    <uni:uses rdf:resource="#Leap-work-tests_2"/>
+    <uni:printsIn rdf:resource="#Laser_2"/>
+    <uni:salary rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >1480E</uni:salary>
+    <uni:worksAt rdf:resource="#BackEnd_1"/>
+  </uni:Integration-testing>
+  <owl:AnnotationProperty rdf:ID="worksIn">
+    <rdfs:domain rdf:resource="#Developer"/>
+  </owl:AnnotationProperty>
+  <uni:Tech rdf:ID="Tech_1">
+    <uni:leads rdf:resource="#Fullstack_1"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+    <uni:salary rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >1600E</uni:salary>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Tech 1 Stelios</rdfs:label>
+    <uni:worksAt rdf:resource="#Fullstack_1"/>
+    <uni:printsIn rdf:resource="#Laser_1"/>
+    <uni:yearsOfWork rdf:datatype="http://www.w3.org/2001/XMLSchema#integer"
+    >6</uni:yearsOfWork>
+    <uni:lastname rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Baltagiannis</uni:lastname>
+    <uni:firstname rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Stelios</uni:firstname>
+    <uni:age rdf:datatype="http://www.w3.org/2001/XMLSchema#integer"
+    >47</uni:age>
+    <uni:sitsOn rdf:resource="#Ergonomic_1"/>
+  </uni:Tech>
+  <owl:NamedIndividual rdf:ID="Performance-testing_2">
+    <uni:sitsOn rdf:resource="#Comfort_1"/>
+    <uni:uses>
+      <owl:NamedIndividual rdf:ID="Selenium_3">
+        <uni:languageVersion rdf:datatype="http://www.w3.org/2001/XMLSchema#integer"
+        >16</uni:languageVersion>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+        >Selenium 3</rdfs:label>
+        <rdf:type rdf:resource="#Selenium"/>
+      </owl:NamedIndividual>
+    </uni:uses>
+    <uni:age rdf:datatype="http://www.w3.org/2001/XMLSchema#integer"
+    >28</uni:age>
+    <uni:salary rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >1250E</uni:salary>
+    <uni:worksOnlyIn rdf:resource="#MacOs_1"/>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Performance-testing 2 Nefeli</rdfs:label>
+    <uni:printsIn rdf:resource="#Laser_2"/>
+    <uni:firstname rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Nefeli</uni:firstname>
+    <uni:lastname rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Tsioka</uni:lastname>
+    <uni:yearsOfWork rdf:datatype="http://www.w3.org/2001/XMLSchema#integer"
+    >2</uni:yearsOfWork>
+    <uni:worksAt rdf:resource="#BackEnd_3"/>
+    <rdf:type rdf:resource="#Performance-testing"/>
+  </owl:NamedIndividual>
+  <owl:NamedIndividual rdf:ID="Business-manager_1">
+    <uni:firstname rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Kostas</uni:firstname>
+    <uni:worksAt rdf:resource="#Hr-team_1"/>
+    <uni:printsIn rdf:resource="#Laser_2"/>
+    <uni:lastname rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Karakasidis</uni:lastname>
+    <uni:salary rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >1300E</uni:salary>
+    <uni:sitsOn rdf:resource="#Comfort_1"/>
+    <uni:yearsOfWork rdf:datatype="http://www.w3.org/2001/XMLSchema#integer"
+    >4</uni:yearsOfWork>
+    <rdf:type rdf:resource="#Business-manager"/>
+    <uni:age rdf:datatype="http://www.w3.org/2001/XMLSchema#integer"
+    >36</uni:age>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Business-manager 1 Kostas</rdfs:label>
+  </owl:NamedIndividual>
+  <owl:NamedIndividual rdf:ID="Linux_2">
+    <uni:hasOs rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Linux</uni:hasOs>
+    <uni:nameBrand rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Dell</uni:nameBrand>
+    <uni:ram rdf:datatype="http://www.w3.org/2001/XMLSchema#integer"
+    >32</uni:ram>
+    <uni:cores rdf:datatype="http://www.w3.org/2001/XMLSchema#integer"
+    >8</uni:cores>
+    <uni:rom rdf:datatype="http://www.w3.org/2001/XMLSchema#integer"
+    >256</uni:rom>
+    <uni:osVersion rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >10.06</uni:osVersion>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Linux 2 DELL</rdfs:label>
+    <rdf:type rdf:resource="#Laptop"/>
+  </owl:NamedIndividual>
+  <uni:Economist rdf:ID="Economist_5">
+    <uni:firstname rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Stathis</uni:firstname>
+    <uni:sitsOn rdf:resource="#Ergonomic_1"/>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Economist 5 Stathis</rdfs:label>
+    <uni:printsIn rdf:resource="#Laser_1"/>
+    <uni:salary rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >1300E</uni:salary>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+    <uni:yearsOfWork rdf:datatype="http://www.w3.org/2001/XMLSchema#integer"
+    >4</uni:yearsOfWork>
+    <uni:worksAt>
+      <owl:NamedIndividual rdf:ID="Abroad-sales_2">
+        <uni:customerLocation rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+        >Norway</uni:customerLocation>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+        >Abroad-sales 2 Money Magnets</rdfs:label>
+        <uni:numberOfEmployees rdf:datatype="http://www.w3.org/2001/XMLSchema#integer"
+        >4</uni:numberOfEmployees>
+        <rdf:type rdf:resource="#Abroad-sales"/>
+        <uni:title rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+        >Money Magnets</uni:title>
+      </owl:NamedIndividual>
+    </uni:worksAt>
+    <uni:lastname rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Kontostergios</uni:lastname>
+    <uni:age rdf:datatype="http://www.w3.org/2001/XMLSchema#integer"
+    >34</uni:age>
+  </uni:Economist>
+  <owl:NamedIndividual rdf:ID="Component-testing_1">
+    <uni:lastname rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Koktsidis</uni:lastname>
+    <uni:age rdf:datatype="http://www.w3.org/2001/XMLSchema#integer"
+    >33</uni:age>
+    <uni:firstname rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Alexandros</uni:firstname>
+    <uni:salary rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >1350E</uni:salary>
+    <uni:worksAt rdf:resource="#BackEnd_2"/>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Component-testing 1 Alexandros</rdfs:label>
+    <uni:worksOnlyIn rdf:resource="#MacOs_1"/>
+    <rdf:type rdf:resource="#Component-testing"/>
+    <uni:printsIn rdf:resource="#Laser_2"/>
+    <uni:uses>
+      <uni:Leap-work-tests rdf:ID="Leap-work-tests_Csharp">
+        <uni:languageVersion rdf:datatype="http://www.w3.org/2001/XMLSchema#integer"
+        >2020</uni:languageVersion>
+      </uni:Leap-work-tests>
+    </uni:uses>
+    <uni:sitsOn rdf:resource="#Comfort_2"/>
+    <uni:yearsOfWork rdf:datatype="http://www.w3.org/2001/XMLSchema#integer"
+    >3</uni:yearsOfWork>
+  </owl:NamedIndividual>
+  <uni:Economist rdf:ID="Economist_4">
+    <uni:age rdf:datatype="http://www.w3.org/2001/XMLSchema#integer"
+    >35</uni:age>
+    <uni:lastname rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Giannopoulou</uni:lastname>
+    <uni:worksAt>
+      <owl:NamedIndividual rdf:ID="Local-sales_2">
+        <uni:title rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+        >Southers</uni:title>
+        <uni:numberOfEmployees rdf:datatype="http://www.w3.org/2001/XMLSchema#integer"
+        >5</uni:numberOfEmployees>
+        <uni:customerLocation rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+        >Athens</uni:customerLocation>
+        <rdf:type rdf:resource="#Local-sales"/>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+        >Local-sales 2 Southers</rdfs:label>
+      </owl:NamedIndividual>
+    </uni:worksAt>
+    <uni:printsIn rdf:resource="#Laser_2"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+    <uni:firstname rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Athanasia</uni:firstname>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Economist 4 Athanasia</rdfs:label>
+    <uni:sitsOn rdf:resource="#Comfort_1"/>
+    <uni:yearsOfWork rdf:datatype="http://www.w3.org/2001/XMLSchema#integer"
+    >6</uni:yearsOfWork>
+    <uni:salary rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >1400E</uni:salary>
+  </uni:Economist>
+  <owl:NamedIndividual rdf:ID="Business-manager_2">
+    <uni:lastname rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Valkanou</uni:lastname>
+    <uni:sitsOn rdf:resource="#Ergonomic_1"/>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Business-manager 2 Sofia</rdfs:label>
+    <rdf:type rdf:resource="#Business-manager"/>
+    <uni:printsIn rdf:resource="#Laser_1"/>
+    <uni:firstname rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Sofia</uni:firstname>
+    <uni:salary rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >1200E</uni:salary>
+    <uni:worksAt>
+      <owl:NamedIndividual rdf:ID="Hr-team_2">
+        <uni:numberOfEmployees rdf:datatype="http://www.w3.org/2001/XMLSchema#integer"
+        >2</uni:numberOfEmployees>
+        <rdf:type rdf:resource="#HR"/>
+        <uni:title rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+        >Team Growth</uni:title>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+        >Hr-team 2 TeamGrowth</rdfs:label>
+      </owl:NamedIndividual>
+    </uni:worksAt>
+    <uni:age rdf:datatype="http://www.w3.org/2001/XMLSchema#integer"
+    >31</uni:age>
+    <uni:yearsOfWork rdf:datatype="http://www.w3.org/2001/XMLSchema#integer"
+    >2</uni:yearsOfWork>
+  </owl:NamedIndividual>
+  <owl:NamedIndividual rdf:ID="Application-server_3">
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Application-server 3</rdfs:label>
+    <uni:serverName rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Admincontrol-server-VDR</uni:serverName>
+    <rdf:type rdf:resource="#Application-server"/>
+  </owl:NamedIndividual>
+  <owl:NamedIndividual rdf:ID="Mail-server_1">
+    <uni:serverName rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Mailjet</uni:serverName>
+    <rdf:type rdf:resource="#Mail-server"/>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Mail-server 1</rdfs:label>
+  </owl:NamedIndividual>
+  <owl:NamedIndividual rdf:ID="Application-server_2">
+    <rdf:type rdf:resource="#Application-server"/>
+    <uni:serverName rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Admincontrol-server-BP</uni:serverName>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Application-server 2</rdfs:label>
+  </owl:NamedIndividual>
+  <owl:NamedIndividual rdf:ID="VM-server_2">
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >VM-server 2</rdfs:label>
+    <rdf:type rdf:resource="#VM-server"/>
+    <uni:serverName rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Admincontrol-VM-2</uni:serverName>
+  </owl:NamedIndividual>
+  <owl:NamedIndividual rdf:ID="Application-server_1">
+    <rdf:type rdf:resource="#Application-server"/>
+    <uni:serverName rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Admincontrol-server-BO</uni:serverName>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Application-server 1</rdfs:label>
+  </owl:NamedIndividual>
+  <owl:NamedIndividual rdf:ID="VM-server_1">
+    <uni:serverName rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Admincontrol-VM-1</uni:serverName>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >VM-server 1</rdfs:label>
+    <rdf:type rdf:resource="#VM-server"/>
+  </owl:NamedIndividual>
+  <owl:NamedIndividual rdf:ID="Linux_1">
+    <uni:rom rdf:datatype="http://www.w3.org/2001/XMLSchema#integer"
+    >512</uni:rom>
+    <uni:cores rdf:datatype="http://www.w3.org/2001/XMLSchema#integer"
+    >8</uni:cores>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Linux 1 HP</rdfs:label>
+    <uni:ram rdf:datatype="http://www.w3.org/2001/XMLSchema#integer"
+    >16</uni:ram>
+    <rdf:type rdf:resource="#Laptop"/>
+    <uni:osVersion rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >10.02</uni:osVersion>
+    <uni:hasOs rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Linux</uni:hasOs>
+    <uni:nameBrand rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >HP</uni:nameBrand>
+  </owl:NamedIndividual>
+  <uni:Economist rdf:ID="Economist_6">
+    <uni:lastname rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Elenidou</uni:lastname>
+    <uni:sitsOn rdf:resource="#Comfort_2"/>
+    <uni:age rdf:datatype="http://www.w3.org/2001/XMLSchema#integer"
+    >28</uni:age>
+    <uni:worksAt>
+      <owl:NamedIndividual rdf:ID="Local-sales_1">
+        <uni:numberOfEmployees rdf:datatype="http://www.w3.org/2001/XMLSchema#integer"
+        >3</uni:numberOfEmployees>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+        >Local-sales 1 Northerns</rdfs:label>
+        <rdf:type rdf:resource="#Local-sales"/>
+        <uni:title rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+        >Northerns</uni:title>
+        <uni:customerLocation rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+        >Thessaloniki</uni:customerLocation>
+      </owl:NamedIndividual>
+    </uni:worksAt>
+    <uni:firstname rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Nikoleta</uni:firstname>
+    <uni:salary rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >1150E</uni:salary>
+    <uni:yearsOfWork rdf:datatype="http://www.w3.org/2001/XMLSchema#integer"
+    >2</uni:yearsOfWork>
+    <uni:printsIn rdf:resource="#Laser_2"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Economist 6 Nikoleta</rdfs:label>
+  </uni:Economist>
+  <owl:AnnotationProperty rdf:about="http://spinrdf.org/spin#imports"/>
+  <uni:Manager rdf:ID="Manager_1">
+    <uni:sitsOn rdf:resource="#Anatomic_1"/>
+    <uni:yearsOfWork rdf:datatype="http://www.w3.org/2001/XMLSchema#integer"
+    >4</uni:yearsOfWork>
+    <uni:salary rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >1650E</uni:salary>
+    <uni:worksAt rdf:resource="#BackEnd_1"/>
+    <uni:firstname rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Menelaos</uni:firstname>
+    <uni:printsIn rdf:resource="#Laser_2"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+    <uni:age rdf:datatype="http://www.w3.org/2001/XMLSchema#integer"
+    >46</uni:age>
+    <uni:leads rdf:resource="#BackEnd_1"/>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Manager 1 Menelaos</rdfs:label>
+    <uni:lastname rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Sismanidis</uni:lastname>
+  </uni:Manager>
+  <owl:NamedIndividual rdf:ID="Unit-testing_2">
+    <uni:salary rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >1350E</uni:salary>
+    <uni:worksOnlyIn rdf:resource="#MacOs_1"/>
+    <uni:lastname rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Vasiliou</uni:lastname>
+    <uni:firstname rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Veronica</uni:firstname>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Unit-testing 2 Veronica</rdfs:label>
+    <uni:sitsOn rdf:resource="#Comfort_2"/>
+    <uni:uses rdf:resource="#Selenium_1"/>
+    <uni:worksAt rdf:resource="#FrontEnd_2"/>
+    <uni:age rdf:datatype="http://www.w3.org/2001/XMLSchema#integer"
+    >26</uni:age>
+    <rdf:type rdf:resource="#Unit-testing"/>
+    <uni:printsIn rdf:resource="#Laser_2"/>
+    <uni:yearsOfWork rdf:datatype="http://www.w3.org/2001/XMLSchema#integer"
+    >4</uni:yearsOfWork>
+  </owl:NamedIndividual>
+  <owl:NamedIndividual rdf:ID="Database-server_1">
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Database-server 1</rdfs:label>
+    <rdf:type rdf:resource="#Database-server"/>
+    <uni:serverName rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Admincontrol-DAC-DB</uni:serverName>
+    <uni:isWrittenBy rdf:resource="#Sql_1"/>
+  </owl:NamedIndividual>
+  <owl:NamedIndividual rdf:ID="Economist_1">
+    <uni:firstname rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Spiros</uni:firstname>
+    <uni:yearsOfWork rdf:datatype="http://www.w3.org/2001/XMLSchema#integer"
+    >3</uni:yearsOfWork>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Economist 1 Spiros</rdfs:label>
+    <uni:salary rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >1200E</uni:salary>
+    <uni:worksAt>
+      <owl:NamedIndividual rdf:ID="Abroad-sales_1">
+        <uni:customerLocation rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+        >Germany</uni:customerLocation>
+        <uni:title rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+        >Let's make a deal</uni:title>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+        >Abroad-sales 1 LetsMakeADeal</rdfs:label>
+        <uni:numberOfEmployees rdf:datatype="http://www.w3.org/2001/XMLSchema#integer"
+        >3</uni:numberOfEmployees>
+        <rdf:type rdf:resource="#Abroad-sales"/>
+      </owl:NamedIndividual>
+    </uni:worksAt>
+    <uni:printsIn rdf:resource="#Laser_2"/>
+    <uni:lastname rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Giannakis</uni:lastname>
+    <rdf:type rdf:resource="#Economist"/>
+    <uni:sitsOn rdf:resource="#Anatomic_1"/>
+    <uni:age rdf:datatype="http://www.w3.org/2001/XMLSchema#integer"
+    >31</uni:age>
+  </owl:NamedIndividual>
+  <owl:NamedIndividual rdf:ID="Unit-testing_1">
+    <uni:uses rdf:resource="#Selenium_1"/>
+    <uni:yearsOfWork rdf:datatype="http://www.w3.org/2001/XMLSchema#integer"
+    >4</uni:yearsOfWork>
+    <uni:salary rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >1450E</uni:salary>
+    <uni:worksAt rdf:resource="#BackEnd_1"/>
+    <uni:firstname rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >John</uni:firstname>
+    <uni:age rdf:datatype="http://www.w3.org/2001/XMLSchema#integer"
+    >27</uni:age>
+    <uni:printsIn rdf:resource="#Laser_1"/>
+    <uni:sitsOn rdf:resource="#Anatomic_1"/>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Unit-testing 1 John</rdfs:label>
+    <uni:worksOnlyIn rdf:resource="#MacOs_1"/>
+    <rdf:type rdf:resource="#Unit-testing"/>
+    <uni:lastname rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Athanasiou</uni:lastname>
+  </owl:NamedIndividual>
+  <uni:Manager rdf:ID="Manager_2">
+    <uni:lastname rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Gerousi</uni:lastname>
+    <uni:leads rdf:resource="#BackEnd_2"/>
+    <uni:sitsOn rdf:resource="#Ergonomic_1"/>
+    <uni:printsIn rdf:resource="#Laser_2"/>
+    <uni:leads rdf:resource="#BackEnd_3"/>
+    <uni:salary rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >1550E</uni:salary>
+    <uni:yearsOfWork rdf:datatype="http://www.w3.org/2001/XMLSchema#integer"
+    >5</uni:yearsOfWork>
+    <uni:age rdf:datatype="http://www.w3.org/2001/XMLSchema#integer"
+    >41</uni:age>
+    <uni:worksAt rdf:resource="#BackEnd_3"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Manager 2 Theodora</rdfs:label>
+    <uni:firstname rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Theodora</uni:firstname>
+  </uni:Manager>
+  <owl:NamedIndividual rdf:ID="Web_1">
+    <uni:lastname rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Lazaridis</uni:lastname>
+    <uni:worksWith rdf:resource="#Sql_2"/>
+    <uni:age rdf:datatype="http://www.w3.org/2001/XMLSchema#integer"
+    >33</uni:age>
+    <uni:printsIn rdf:resource="#Laser_1"/>
+    <uni:yearsOfWork rdf:datatype="http://www.w3.org/2001/XMLSchema#integer"
+    >3</uni:yearsOfWork>
+    <uni:firstname rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Lazaros</uni:firstname>
+    <uni:sitsOn rdf:resource="#Ergonomic_1"/>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Web 1 Lazaros</rdfs:label>
+    <uni:salary rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >1400E</uni:salary>
+    <rdf:type rdf:resource="#Web"/>
+    <uni:worksIn rdf:resource="#Windows-laptop_2"/>
+    <uni:worksAt rdf:resource="#BackEnd_1"/>
+  </owl:NamedIndividual>
+  <uni:Component-testing rdf:ID="Component-testing_3">
+    <uni:sitsOn rdf:resource="#Ergonomic_1"/>
+    <uni:age rdf:datatype="http://www.w3.org/2001/XMLSchema#integer"
+    >41</uni:age>
+    <uni:worksAt rdf:resource="#Fullstack_1"/>
+    <uni:yearsOfWork rdf:datatype="http://www.w3.org/2001/XMLSchema#integer"
+    >4</uni:yearsOfWork>
+    <uni:printsIn rdf:resource="#Laser_1"/>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Component-testing 3 Elena</rdfs:label>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+    <uni:lastname rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Papatheochari</uni:lastname>
+    <uni:salary rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >1500E</uni:salary>
+    <uni:uses rdf:resource="#Leap-work-tests_3"/>
+    <uni:firstname rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Elena</uni:firstname>
+    <uni:worksOnlyIn rdf:resource="#MacOs_1"/>
+  </uni:Component-testing>
+  <owl:NamedIndividual rdf:ID="Database-server_3">
+    <uni:serverName rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Admincontrol-VAC-DB</uni:serverName>
+    <uni:isWrittenBy rdf:resource="#Sql_3"/>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Database-server 3</rdfs:label>
+    <rdf:type rdf:resource="#Database-server"/>
+  </owl:NamedIndividual>
+  <uni:Economist rdf:ID="Economist_3">
+    <uni:firstname rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Nadia</uni:firstname>
+    <uni:yearsOfWork rdf:datatype="http://www.w3.org/2001/XMLSchema#integer"
+    >2</uni:yearsOfWork>
+    <uni:printsIn rdf:resource="#Laser_1"/>
+    <uni:worksAt rdf:resource="#Local-sales_1"/>
+    <uni:age rdf:datatype="http://www.w3.org/2001/XMLSchema#integer"
+    >32</uni:age>
+    <uni:salary rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >1250E</uni:salary>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Economist 3 Nadia</rdfs:label>
+    <uni:sitsOn rdf:resource="#Comfort_1"/>
+    <uni:lastname rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Tsaliki</uni:lastname>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  </uni:Economist>
+  <owl:NamedIndividual rdf:ID="Business-manager_4">
+    <uni:age rdf:datatype="http://www.w3.org/2001/XMLSchema#integer"
+    >37</uni:age>
+    <uni:sitsOn rdf:resource="#Comfort_1"/>
+    <uni:firstname rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Panos</uni:firstname>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Business-manager 4 Panos</rdfs:label>
+    <rdf:type rdf:resource="#Business-manager"/>
+    <uni:salary rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >1400E</uni:salary>
+    <uni:yearsOfWork rdf:datatype="http://www.w3.org/2001/XMLSchema#integer"
+    >6</uni:yearsOfWork>
+    <uni:printsIn rdf:resource="#Laser_2"/>
+    <uni:worksAt rdf:resource="#Hr-team_2"/>
+    <uni:lastname rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Konstantinidis</uni:lastname>
+  </owl:NamedIndividual>
+  <owl:NamedIndividual rdf:ID="Standard_1">
+    <uni:inches rdf:datatype="http://www.w3.org/2001/XMLSchema#integer"
+    >28</uni:inches>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Standard 1</rdfs:label>
+    <rdf:type rdf:resource="#Standard"/>
+    <uni:amount rdf:datatype="http://www.w3.org/2001/XMLSchema#integer"
+    >30</uni:amount>
+  </owl:NamedIndividual>
+  <owl:NamedIndividual rdf:ID="Component-testing_2">
+    <uni:uses rdf:resource="#Leap-work-tests_3"/>
+    <uni:worksAt rdf:resource="#FrontEnd_1"/>
+    <rdf:type rdf:resource="#Component-testing"/>
+    <uni:lastname rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Kokolis</uni:lastname>
+    <uni:salary rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >1250E</uni:salary>
+    <uni:printsIn rdf:resource="#Laser_2"/>
+    <uni:age rdf:datatype="http://www.w3.org/2001/XMLSchema#integer"
+    >31</uni:age>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Component-testing 2 vaggelis</rdfs:label>
+    <uni:worksOnlyIn rdf:resource="#MacOs_1"/>
+    <uni:sitsOn rdf:resource="#Comfort_2"/>
+    <uni:yearsOfWork rdf:datatype="http://www.w3.org/2001/XMLSchema#integer"
+    >2</uni:yearsOfWork>
+    <uni:firstname rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Vaggelis</uni:firstname>
+  </owl:NamedIndividual>
+  <uni:Web rdf:ID="Web_11">
+    <uni:yearsOfWork rdf:datatype="http://www.w3.org/2001/XMLSchema#integer"
+    >4</uni:yearsOfWork>
+    <uni:age rdf:datatype="http://www.w3.org/2001/XMLSchema#integer"
+    >38</uni:age>
+    <uni:worksWith rdf:resource="#Sql_3"/>
+    <uni:printsIn rdf:resource="#Laser_2"/>
+    <uni:salary rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >1450E</uni:salary>
+    <uni:lastname rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Bouros</uni:lastname>
+    <uni:firstname rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Stefanos</uni:firstname>
+    <uni:worksAt rdf:resource="#BackEnd_3"/>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Web 11 Stefanos</rdfs:label>
+    <uni:worksIn rdf:resource="#Windows-laptop_2"/>
+    <uni:sitsOn rdf:resource="#Comfort_2"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  </uni:Web>
+  <uni:Business-manager rdf:ID="Business-manager_3">
+    <uni:age rdf:datatype="http://www.w3.org/2001/XMLSchema#integer"
+    >29</uni:age>
+    <uni:yearsOfWork rdf:datatype="http://www.w3.org/2001/XMLSchema#integer"
+    >1</uni:yearsOfWork>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Business-manager 3 Filio</rdfs:label>
+    <uni:printsIn rdf:resource="#Laser_1"/>
+    <uni:firstname rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Filio</uni:firstname>
+    <uni:sitsOn rdf:resource="#Anatomic_1"/>
+    <uni:worksAt rdf:resource="#Hr-team_1"/>
+    <uni:lastname rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Iosifidou</uni:lastname>
+    <uni:salary rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >1000E</uni:salary>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  </uni:Business-manager>
+  <owl:NamedIndividual rdf:ID="Database-server_2">
+    <uni:serverName rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Admincontrol-SAC-DB</uni:serverName>
+    <rdf:type rdf:resource="#Database-server"/>
+    <uni:isWrittenBy rdf:resource="#Sql_2"/>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Database-server 2</rdfs:label>
+  </owl:NamedIndividual>
+  <owl:NamedIndividual rdf:ID="Economist_2">
+    <uni:sitsOn rdf:resource="#Ergonomic_1"/>
+    <uni:lastname rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Lambrou</uni:lastname>
+    <uni:yearsOfWork rdf:datatype="http://www.w3.org/2001/XMLSchema#integer"
+    >4</uni:yearsOfWork>
+    <uni:age rdf:datatype="http://www.w3.org/2001/XMLSchema#integer"
+    >33</uni:age>
+    <uni:firstname rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Stelios</uni:firstname>
+    <rdf:type rdf:resource="#Economist"/>
+    <uni:worksAt rdf:resource="#Abroad-sales_2"/>
+    <uni:printsIn rdf:resource="#Laser_1"/>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Economist 2 Stelios</rdfs:label>
+    <uni:salary rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >1350E</uni:salary>
+  </owl:NamedIndividual>
+  <owl:NamedIndividual rdf:ID="Performance-testing_3">
+    <uni:uses>
+      <owl:NamedIndividual rdf:ID="Selenium_2">
+        <rdf:type rdf:resource="#Selenium"/>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+        >Selenium 2 18</rdfs:label>
+        <uni:languageVersion rdf:datatype="http://www.w3.org/2001/XMLSchema#integer"
+        >18</uni:languageVersion>
+      </owl:NamedIndividual>
+    </uni:uses>
+    <uni:yearsOfWork rdf:datatype="http://www.w3.org/2001/XMLSchema#integer"
+    >7</uni:yearsOfWork>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Performance-testing 3 Athina</rdfs:label>
+    <uni:age rdf:datatype="http://www.w3.org/2001/XMLSchema#integer"
+    >25</uni:age>
+    <uni:firstname rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Athina</uni:firstname>
+    <uni:worksOnlyIn rdf:resource="#MacOs_1"/>
+    <uni:sitsOn rdf:resource="#Gaming_1"/>
+    <uni:salary rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >1600E</uni:salary>
+    <uni:worksAt rdf:resource="#BackEnd_2"/>
+    <rdf:type rdf:resource="#Performance-testing"/>
+    <uni:lastname rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Kadoglou</uni:lastname>
+    <uni:printsIn rdf:resource="#Laser_1"/>
+  </owl:NamedIndividual>
+  <owl:NamedIndividual rdf:ID="Web_12">
+    <uni:yearsOfWork rdf:datatype="http://www.w3.org/2001/XMLSchema#integer"
+    >4</uni:yearsOfWork>
+    <uni:lastname rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Karipidis</uni:lastname>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Web 12 Stathis</rdfs:label>
+    <uni:sitsOn rdf:resource="#Anatomic_1"/>
+    <rdf:type rdf:resource="#Web"/>
+    <uni:printsIn rdf:resource="#Laser_1"/>
+    <uni:worksAt rdf:resource="#FrontEnd_1"/>
+    <uni:firstname rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Stathis</uni:firstname>
+    <uni:worksIn rdf:resource="#Windows-laptop_2"/>
+    <uni:salary rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >1350E</uni:salary>
+    <uni:age rdf:datatype="http://www.w3.org/2001/XMLSchema#integer"
+    >29</uni:age>
+    <uni:worksWith rdf:resource="#Html_2"/>
+  </owl:NamedIndividual>
+  <uni:Web rdf:ID="Web_13">
+    <uni:worksWith rdf:resource="#Html_1"/>
+    <uni:yearsOfWork rdf:datatype="http://www.w3.org/2001/XMLSchema#integer"
+    >5</uni:yearsOfWork>
+    <uni:age rdf:datatype="http://www.w3.org/2001/XMLSchema#integer"
+    >27</uni:age>
+    <uni:printsIn rdf:resource="#Laser_2"/>
+    <uni:salary rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >1500E</uni:salary>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Web 13 Xristina</rdfs:label>
+    <uni:firstname rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Xristina</uni:firstname>
+    <uni:sitsOn rdf:resource="#Gaming_2"/>
+    <uni:worksAt rdf:resource="#FrontEnd_2"/>
+    <uni:lastname rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Atsikidou</uni:lastname>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+    <uni:worksIn rdf:resource="#Windows-laptop_1"/>
+  </uni:Web>
+  <owl:NamedIndividual rdf:ID="Curve_1">
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Curve 1</rdfs:label>
+    <uni:amount rdf:datatype="http://www.w3.org/2001/XMLSchema#integer"
+    >40</uni:amount>
+    <rdf:type rdf:resource="#Curve"/>
+    <uni:inches rdf:datatype="http://www.w3.org/2001/XMLSchema#integer"
+    >24</uni:inches>
+  </owl:NamedIndividual>
+  <owl:NamedIndividual rdf:ID="Database-server_4">
+    <rdf:type rdf:resource="#Database-server"/>
+    <uni:isWrittenBy rdf:resource="#Sql_3"/>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Database-server 4</rdfs:label>
+    <uni:serverName rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Admincontrol-PROD-DB</uni:serverName>
+  </owl:NamedIndividual>
+  <uni:Manager rdf:ID="Manager_3">
+    <uni:lastname rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Patakis</uni:lastname>
+    <uni:worksAt rdf:resource="#FrontEnd_2"/>
+    <uni:printsIn rdf:resource="#Laser_2"/>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Manager 3 Takis</rdfs:label>
+    <uni:firstname rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Takis</uni:firstname>
+    <uni:age rdf:datatype="http://www.w3.org/2001/XMLSchema#integer"
+    >50</uni:age>
+    <uni:yearsOfWork rdf:datatype="http://www.w3.org/2001/XMLSchema#integer"
+    >7</uni:yearsOfWork>
+    <uni:leads rdf:resource="#Fullstack_1"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+    <uni:salary rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >1700E</uni:salary>
+    <uni:sitsOn rdf:resource="#Comfort_1"/>
+  </uni:Manager>
+  <uni:Server rdf:ID="Server_1_General">
+    <uni:isWrittenBy>
+      <owl:NamedIndividual rdf:ID="Sql_4">
+        <rdf:type rdf:resource="#Sql"/>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+        >Sql 4</rdfs:label>
+      </owl:NamedIndividual>
+    </uni:isWrittenBy>
+    <uni:serverName rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >admincontrol-SAC2-DB</uni:serverName>
+  </uni:Server>
+  <owl:AnnotationProperty rdf:ID="worksOnlyIn">
+    <rdfs:domain rdf:resource="#QA"/>
+  </owl:AnnotationProperty>
+  <uni:Web rdf:ID="Web_4">
+    <uni:firstname rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Manolis</uni:firstname>
+    <uni:lastname rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Karafotakis</uni:lastname>
+    <uni:worksAt rdf:resource="#Fullstack_1"/>
+    <uni:worksWith rdf:resource="#Csharp_3"/>
+    <uni:salary rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >1300E</uni:salary>
+    <uni:yearsOfWork rdf:datatype="http://www.w3.org/2001/XMLSchema#integer"
+    >3</uni:yearsOfWork>
+    <uni:worksIn rdf:resource="#Windows-laptop_1"/>
+    <uni:age rdf:datatype="http://www.w3.org/2001/XMLSchema#integer"
+    >27</uni:age>
+    <uni:printsIn rdf:resource="#Laser_1"/>
+    <uni:sitsOn rdf:resource="#Comfort_1"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+    <uni:worksWith rdf:resource="#Javascript_1"/>
+    <uni:worksWith rdf:resource="#Html_2"/>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Web 4 Manolis</rdfs:label>
+  </uni:Web>
+  <uni:Web rdf:ID="Web_15">
+    <uni:worksIn rdf:resource="#Windows-laptop_1"/>
+    <uni:firstname rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >George</uni:firstname>
+    <uni:worksWith rdf:resource="#Html_1"/>
+    <uni:yearsOfWork rdf:datatype="http://www.w3.org/2001/XMLSchema#integer"
+    >5</uni:yearsOfWork>
+    <uni:lastname rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Papaterpos</uni:lastname>
+    <uni:worksAt rdf:resource="#Fullstack_1"/>
+    <uni:age rdf:datatype="http://www.w3.org/2001/XMLSchema#integer"
+    >27</uni:age>
+    <uni:worksWith>
+      <owl:NamedIndividual rdf:ID="Csharp_1">
+        <uni:isKnownPerfectBy rdf:resource="#Windows_5"/>
+        <uni:isKnownPerfectBy>
+          <owl:NamedIndividual rdf:ID="Windows_4">
+            <uni:sitsOn rdf:resource="#Comfort_1"/>
+            <uni:firstname rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+            >Tasos</uni:firstname>
+            <uni:worksAt rdf:resource="#Fullstack_1"/>
+            <uni:worksWith rdf:resource="#Csharp_1"/>
+            <uni:yearsOfWork rdf:datatype="http://www.w3.org/2001/XMLSchema#integer"
+            >3</uni:yearsOfWork>
+            <uni:printsIn rdf:resource="#Laser_2"/>
+            <uni:version rdf:datatype="http://www.w3.org/2001/XMLSchema#integer"
+            >10</uni:version>
+            <rdf:type rdf:resource="#Windows"/>
+            <uni:age rdf:datatype="http://www.w3.org/2001/XMLSchema#integer"
+            >29</uni:age>
+            <uni:worksWith rdf:resource="#Html_2"/>
+            <uni:worksIn rdf:resource="#Windows-laptop_1"/>
+            <uni:worksWith rdf:resource="#Javascript_2"/>
+            <uni:lastname rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+            >Katsaras</uni:lastname>
+            <uni:salary rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+            >1300E</uni:salary>
+            <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+            >Windows 4 Tasos</rdfs:label>
+          </owl:NamedIndividual>
+        </uni:isKnownPerfectBy>
+        <uni:isKnownPerfectBy>
+          <owl:NamedIndividual rdf:ID="Windows_3">
+            <uni:yearsOfWork rdf:datatype="http://www.w3.org/2001/XMLSchema#integer"
+            >3</uni:yearsOfWork>
+            <uni:version rdf:datatype="http://www.w3.org/2001/XMLSchema#integer"
+            >11</uni:version>
+            <uni:salary rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+            >1450E</uni:salary>
+            <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+            >Windows 3 Olina</rdfs:label>
+            <uni:age rdf:datatype="http://www.w3.org/2001/XMLSchema#integer"
+            >26</uni:age>
+            <uni:worksWith rdf:resource="#Sql_2"/>
+            <uni:printsIn rdf:resource="#Laser_1"/>
+            <uni:worksAt rdf:resource="#BackEnd_1"/>
+            <uni:firstname rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+            >Olina</uni:firstname>
+            <uni:lastname rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+            >Kapetaniou</uni:lastname>
+            <uni:sitsOn rdf:resource="#Ergonomic_1"/>
+            <uni:worksIn rdf:resource="#Windows-laptop_2"/>
+            <rdf:type rdf:resource="#Windows"/>
+          </owl:NamedIndividual>
+        </uni:isKnownPerfectBy>
+        <uni:isKnownPerfectBy>
+          <owl:NamedIndividual rdf:ID="Windows_2">
+            <uni:firstname rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+            >Christina</uni:firstname>
+            <uni:worksAt rdf:resource="#BackEnd_1"/>
+            <uni:worksIn rdf:resource="#Windows-laptop_2"/>
+            <uni:age rdf:datatype="http://www.w3.org/2001/XMLSchema#integer"
+            >28</uni:age>
+            <uni:version rdf:datatype="http://www.w3.org/2001/XMLSchema#integer"
+            >10</uni:version>
+            <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+            >Windows 2 Christina</rdfs:label>
+            <rdf:type rdf:resource="#Windows"/>
+            <uni:printsIn rdf:resource="#Laser_2"/>
+            <uni:lastname rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+            >markidou</uni:lastname>
+            <uni:worksWith rdf:resource="#Sql_1"/>
+            <uni:yearsOfWork rdf:datatype="http://www.w3.org/2001/XMLSchema#integer"
+            >4</uni:yearsOfWork>
+            <uni:sitsOn rdf:resource="#Ergonomic_1"/>
+            <uni:salary rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+            >1350E</uni:salary>
+          </owl:NamedIndividual>
+        </uni:isKnownPerfectBy>
+        <uni:isKnownPerfectBy rdf:resource="#Windows_1"/>
+        <uni:languageVersion rdf:datatype="http://www.w3.org/2001/XMLSchema#integer"
+        >10</uni:languageVersion>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+        >Csharp 1 10</rdfs:label>
+        <rdf:type rdf:resource="#Csharp"/>
+      </owl:NamedIndividual>
+    </uni:worksWith>
+    <uni:printsIn rdf:resource="#Laser_1"/>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Web 15 George</rdfs:label>
+    <uni:sitsOn rdf:resource="#Comfort_1"/>
+    <uni:salary rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >1400E</uni:salary>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+    <uni:worksWith rdf:resource="#Javascript_1"/>
+  </uni:Web>
+</rdf:RDF>
+
+<!-- Created with Protege (with OWL Plugin 3.5, Build 663)  http://protege.stanford.edu -->
